@@ -11,7 +11,7 @@ import java.util.ArrayList;
 
 /**
  *
- * @author vrushank
+ * @author prasannanimbalkar
  */
 public class StudentOrganization extends Organization {
 

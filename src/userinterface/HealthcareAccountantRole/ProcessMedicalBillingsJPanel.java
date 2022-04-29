@@ -22,7 +22,7 @@ import javax.swing.table.TableRowSorter;
 
 /**
  *
- * @author vrushank
+ * @author prasannanimbalkar
  */
 public class ProcessMedicalBillingsJPanel extends javax.swing.JPanel {
 

@@ -14,7 +14,7 @@ import javax.swing.JPanel;
 
 /**
  *
- * @author vrushank
+ * @author rakesh
  */
 public class DoctorRole extends Role{
 

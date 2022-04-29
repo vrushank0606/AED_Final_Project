@@ -13,7 +13,7 @@ import javax.swing.JPanel;
 
 /**
  *
- * @author vrushank
+ * @author prasannanimbalkar
  */
 public class SelectCourseJPanel extends javax.swing.JPanel {
 

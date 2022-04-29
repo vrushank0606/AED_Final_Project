@@ -7,7 +7,7 @@ package Business.Insurance;
 
 /**
  *
- * @author vrushank
+ * @author ankitaindi
  */
 public class Insurance {
 

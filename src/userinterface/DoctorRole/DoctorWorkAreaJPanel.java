@@ -19,7 +19,7 @@ import javax.swing.table.TableRowSorter;
 
 /**
  *
- * @author vrushank
+ * @author ankitaindi
  */
 public class DoctorWorkAreaJPanel extends javax.swing.JPanel {
 

@@ -16,7 +16,7 @@ import userinterface.StudentRole.RequestCaseStudyJPanel;
 
 /**
  *
- * @author vrushank
+ * @author rakesh
  */
 public class UniversityStudent extends Role{
 

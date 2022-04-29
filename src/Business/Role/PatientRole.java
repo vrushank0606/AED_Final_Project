@@ -15,7 +15,7 @@ import userinterface.PatientRole.PatientWorkAreaJPanel;
 
 /**
  *
- * @author vrushank
+ * @author rakesh
  */
 public class PatientRole extends Role{
      @Override

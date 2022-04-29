@@ -11,7 +11,7 @@ import Business.Patient.Patient;
 
 /**
  *
- * @author vrushank
+ * @author ankitaindi
  */
 public class AccountantBillingRequest extends WorkRequest {
 

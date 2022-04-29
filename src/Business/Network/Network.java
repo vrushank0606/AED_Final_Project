@@ -9,7 +9,7 @@ import Business.Enterprise.EnterpriseDirectory;
 
 /**
  *
- * @author vrushank
+ * @author prasannanimbalkar
  */
 public class Network {
     private String name;

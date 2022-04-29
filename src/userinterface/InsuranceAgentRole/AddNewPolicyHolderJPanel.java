@@ -28,7 +28,7 @@ import javax.swing.table.TableRowSorter;
 
 /**
  *
- * @author vrushank
+ * @author rakesh
  */
 
 public class AddNewPolicyHolderJPanel extends javax.swing.JPanel {

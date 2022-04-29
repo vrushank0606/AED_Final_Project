@@ -19,7 +19,7 @@ import javax.swing.JPanel;
 
 /**
  *
- * @author vrushank
+ * @author prasannanimbalkar
  */
 public class EmailBillingInformationToPatient extends javax.swing.JPanel {
 

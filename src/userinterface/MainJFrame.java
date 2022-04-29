@@ -26,7 +26,7 @@ import javax.swing.plaf.basic.BasicSplitPaneUI;
 
 /**
  *
- * @author vrushank
+ * @author rakesh
  */
 public class MainJFrame extends javax.swing.JFrame {
 

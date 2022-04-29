@@ -21,7 +21,7 @@ import javax.swing.table.TableRowSorter;
 
 /**
  *
- * @author vrushank
+ * @author ankitaindi
  */
 public class ProfessorWorkAreaJPanel extends javax.swing.JPanel {
 

@@ -16,7 +16,7 @@ import userinterface.DeanRole.OfficerWorkAreaJPanel;
 
 /**
  *
- * @author vrushank
+ * @author rakesh
  */
 public class UniversityDeanRole extends Role{
 
