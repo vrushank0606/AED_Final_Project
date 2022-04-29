@@ -11,7 +11,7 @@ import java.util.ArrayList;
 
 /**
  *
- * @author prasannanimbalkar
+ * @author vrushank
  */
 public class ProfessorOrganization extends Organization {
 

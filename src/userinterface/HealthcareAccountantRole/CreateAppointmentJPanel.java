@@ -33,7 +33,7 @@ import javax.swing.JPanel;
 
 /**
  *
- * @author prasannanimbalkar
+ * @author vrushank
  */
 public class CreateAppointmentJPanel extends javax.swing.JPanel {
     

@@ -12,7 +12,7 @@ import java.util.ArrayList;
 
 /**
  *
- * @author prasannanimbalkar
+ * @author vrushank
  */
 public class DeanOrganization extends Organization {
 

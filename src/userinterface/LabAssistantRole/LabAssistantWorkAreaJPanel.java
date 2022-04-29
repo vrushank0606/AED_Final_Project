@@ -18,7 +18,7 @@ import javax.swing.table.TableRowSorter;
 
 /**
  *
- * @author Pooja
+ * @author vrushank
  */
 public class LabAssistantWorkAreaJPanel extends javax.swing.JPanel {
 

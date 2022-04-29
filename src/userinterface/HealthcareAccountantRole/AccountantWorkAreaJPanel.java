@@ -27,7 +27,7 @@ import org.jfree.data.general.DefaultPieDataset;
 
 /**
  *
- * @author prasannanimbalkar
+ * @author vrushank
  */
 public class AccountantWorkAreaJPanel extends javax.swing.JPanel {
 

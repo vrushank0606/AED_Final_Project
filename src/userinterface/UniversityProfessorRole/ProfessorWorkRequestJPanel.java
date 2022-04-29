@@ -19,7 +19,7 @@ import javax.swing.JPanel;
 
 /**
  *
- * @author ankitaindi
+ * @author vrushank
  */
 public class ProfessorWorkRequestJPanel extends javax.swing.JPanel {
 

@@ -17,7 +17,7 @@ import javax.swing.JPanel;
 
 /**
  *
- * @author 
+ * @author vrushank
  */
 public class OfficerProcessWorkRequestJPanel extends javax.swing.JPanel {
 
@@ -196,17 +196,6 @@ public class OfficerProcessWorkRequestJPanel extends javax.swing.JPanel {
         );
     }// </editor-fold>//GEN-END:initComponents
 
-    private void backBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backBtnActionPerformed
-        // TODO add your handling code here:
-        jPanel.remove(this);
-        Component[] componentArray = jPanel.getComponents();
-        Component component = componentArray[componentArray.length - 1];
-        OfficerWorkAreaJPanel owjp = (OfficerWorkAreaJPanel) component;
-        owjp.populateTable();
-        CardLayout layout = (CardLayout) jPanel.getLayout();
-        layout.previous(jPanel);
-    }//GEN-LAST:event_backBtnActionPerformed
-
     private void sendRequestToSecretaryBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_sendRequestToSecretaryBtnActionPerformed
         // TODO add your handling code here:
 
@@ -242,8 +231,18 @@ public class OfficerProcessWorkRequestJPanel extends javax.swing.JPanel {
             }
             messageTxt.setText("");
         }
-
     }//GEN-LAST:event_sendRequestToSecretaryBtnActionPerformed
+
+    private void backBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backBtnActionPerformed
+        // TODO add your handling code here:
+        jPanel.remove(this);
+        Component[] componentArray = jPanel.getComponents();
+        Component component = componentArray[componentArray.length - 1];
+        OfficerWorkAreaJPanel owjp = (OfficerWorkAreaJPanel) component;
+        owjp.populateTable();
+        CardLayout layout = (CardLayout) jPanel.getLayout();
+        layout.previous(jPanel);
+    }//GEN-LAST:event_backBtnActionPerformed
 
     private void btnRejectActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRejectActionPerformed
         String message = messageTxt.getText();

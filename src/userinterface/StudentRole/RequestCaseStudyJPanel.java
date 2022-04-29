@@ -19,7 +19,7 @@ import javax.swing.table.TableRowSorter;
 
 /**
  *
- * @author
+ * @author vrushank
  */
 public class RequestCaseStudyJPanel extends javax.swing.JPanel {
 

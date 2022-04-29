@@ -12,7 +12,7 @@ import java.util.List;
 
 /**
  *
- * @author prasannanimbalkar
+ * @author vrushank
  */
 public class UniversityEnterprise extends Enterprise {
 
