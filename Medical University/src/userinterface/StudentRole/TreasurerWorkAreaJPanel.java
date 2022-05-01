@@ -23,7 +23,7 @@ import javax.swing.table.TableRowSorter;
  */
 public class TreasurerWorkAreaJPanel extends javax.swing.JPanel {
 
-    
+     
     private JPanel jPanel;
     private UserAccount userAccount;
     private StudentOrganization treasurerOrganization;
