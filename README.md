@@ -1,1 +1,1 @@
-# AED_Final_Project
+# Medical University Management System
