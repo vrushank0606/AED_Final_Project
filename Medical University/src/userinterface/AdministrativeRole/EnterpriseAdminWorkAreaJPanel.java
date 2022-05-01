@@ -54,7 +54,6 @@ public class EnterpriseAdminWorkAreaJPanel extends javax.swing.JPanel {
         setBackground(new java.awt.Color(255, 255, 255));
 
         jLabel1.setFont(new java.awt.Font("Skia", 1, 24)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(2, 79, 133));
         jLabel1.setText("My Work Area  - Adminstrative Role");
 
         userJButton.setBackground(new java.awt.Color(2, 79, 133));
@@ -88,7 +87,6 @@ public class EnterpriseAdminWorkAreaJPanel extends javax.swing.JPanel {
         });
 
         enterpriseLabel.setFont(new java.awt.Font("Skia", 1, 18)); // NOI18N
-        enterpriseLabel.setForeground(new java.awt.Color(2, 79, 133));
         enterpriseLabel.setText("Enterprise :");
 
         valueLabel.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
