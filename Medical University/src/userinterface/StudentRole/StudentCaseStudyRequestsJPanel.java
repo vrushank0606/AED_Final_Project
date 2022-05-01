@@ -233,10 +233,10 @@ public class StudentCaseStudyRequestsJPanel extends javax.swing.JPanel {
 
        // request.setStatus("Processing");
         ProcessWorkRequestJPanel processWorkRequestJPanel = new ProcessWorkRequestJPanel(userProcessContainer, request);
-        if (request.getLabAssistant() != null) {
+        
+        if (request.getStudentAssistant()!= null) {
             if (userAccount.equals(request.getStudentAssistant())) {
-                if (request.getCaseStudyStatus().equalsIgnoreCase("Pending on Student Assistant")) {
-
+                if (request.getCaseStudyStatus().equalsIgnoreCase("ProfessorApproved")) {
                     userProcessContainer.add("processWorkRequestJPanel", processWorkRequestJPanel);
                     CardLayout layout = (CardLayout) userProcessContainer.getLayout();
                     layout.next(userProcessContainer);
@@ -265,16 +265,14 @@ public class StudentCaseStudyRequestsJPanel extends javax.swing.JPanel {
             return;
         } else {
             workRequest = (PatientTreatmentWorkRequest) workRequestJTable.getValueAt(selectedRow, 0);
-            if (workRequest.getAssignedDoctor() != null) {
-                if (userAccount.equals(workRequest.getAssignedDoctor())) {
-                    if (workRequest.getStatus().equalsIgnoreCase("Under Consultation")) {
-
-                        CardLayout layout = (CardLayout) userProcessContainer.getLayout();
-                        userProcessContainer.add("RequestCaseStudyProfessorApprovalJPanel", new RequestCaseStudyProfessorApprovalJPanel(userProcessContainer, userAccount, enterprise, workRequest));
-                        layout.next(userProcessContainer);
-                    } else {
-                        JOptionPane.showMessageDialog(null, "Cannot create the Lab request as the current status is " + workRequest.getStatus());
-                    }
+            
+            if (workRequest.getStudentAssistant()!= null) {
+                if (userAccount.equals(workRequest.getStudentAssistant())) {
+                    workRequest.setCaseStudyStatus("RequestSentToProfessor");
+                    CardLayout layout = (CardLayout) userProcessContainer.getLayout();
+                    userProcessContainer.add("RequestCaseStudyProfessorApprovalJPanel", new RequestCaseStudyProfessorApprovalJPanel(userProcessContainer, userAccount, enterprise, workRequest));
+                    layout.next(userProcessContainer);
+                    
                 } else {
                     JOptionPane.showMessageDialog(null, "You are not Authorised");
                 }

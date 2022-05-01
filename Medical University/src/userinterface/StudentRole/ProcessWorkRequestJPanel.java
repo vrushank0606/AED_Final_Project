@@ -108,7 +108,7 @@ public class ProcessWorkRequestJPanel extends javax.swing.JPanel {
             int dialogResult = JOptionPane.showConfirmDialog(null, "Are you sure?");
             if (dialogResult == JOptionPane.YES_OPTION) {
                 patientTreatmentWorkRequest.setCaseStudyResult(caseStudyResult);
-                patientTreatmentWorkRequest.setCaseStudyStatus("Case study completed");
+                patientTreatmentWorkRequest.setCaseStudyStatus("Completed");
                 JOptionPane.showMessageDialog(null, "Result submitted successfully");
                 resultJTextField.setText("");
                 submitJButton.setEnabled(false);

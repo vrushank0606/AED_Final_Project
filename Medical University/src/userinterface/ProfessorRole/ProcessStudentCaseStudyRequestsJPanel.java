@@ -27,7 +27,7 @@ public class ProcessStudentCaseStudyRequestsJPanel extends javax.swing.JPanel {
     private JPanel userProcessContainer;
     private EcoSystem business;
     private UserAccount userAccount;
-    private StudentOrganization studentOrganization;
+    private Organization studentOrganization;
 
     /**
      * Creates new form LabAssistantWorkAreaJPanel
@@ -38,7 +38,7 @@ public class ProcessStudentCaseStudyRequestsJPanel extends javax.swing.JPanel {
         this.userProcessContainer = userProcessContainer;
         this.userAccount = account;
         this.business = business;
-        this.studentOrganization = (StudentOrganization) organization;
+        this.studentOrganization =  organization;
 
         populateTable();
     }
@@ -153,10 +153,10 @@ public class ProcessStudentCaseStudyRequestsJPanel extends javax.swing.JPanel {
         }
 
         PatientTreatmentWorkRequest request = (PatientTreatmentWorkRequest) workRequestJTable.getValueAt(selectedRow, 0);
-      if (request.getLabAssistant() == null) {
+      if (request.getStudentAssistant()== null) {
             if (request.getCaseStudyStatus().equalsIgnoreCase("RequestSentToProfessor")) {
-//                request.setStudentAssistant(userAccount);
-                request.setCaseStudyStatus("Approved");
+                // request.setStudentAssistant(userAccount);
+               // request.setCaseStudyStatus("Approved");
                 populateTable();
                 JOptionPane.showMessageDialog(null, "The request is assigned to you");
             } else {
@@ -188,19 +188,10 @@ public class ProcessStudentCaseStudyRequestsJPanel extends javax.swing.JPanel {
        // request.setStatus("Processing");
         ProcessWorkRequestJPanel processWorkRequestJPanel = new ProcessWorkRequestJPanel(userProcessContainer, request);
         if (request.getStudentAssistant() != null) {
-            if (userAccount.equals(request.getStudentAssistant())) {
-                if (request.getCaseStudyStatus().equalsIgnoreCase("Pending on Student Assistant")) {
-
-                    userProcessContainer.add("processWorkRequestJPanel", processWorkRequestJPanel);
-                    CardLayout layout = (CardLayout) userProcessContainer.getLayout();
-                    layout.next(userProcessContainer);
-                } else {
-                    JOptionPane.showMessageDialog(null, "Cannot process the request as the status is: " + request.getCaseStudyStatus());
-                }
-
+            if (request.getCaseStudyStatus() == "RequestSentToProfessor") {
+                request.setCaseStudyStatus("ProfessorApproved");
             } else {
-
-                JOptionPane.showMessageDialog(null, "You are not authorised to process the request");
+                JOptionPane.showMessageDialog(null, "Case not in requested status");
             }
         } else {
             JOptionPane.showMessageDialog(null, "Please assign the request first before proceeding");

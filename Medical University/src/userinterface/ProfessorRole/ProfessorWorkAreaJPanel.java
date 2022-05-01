@@ -28,7 +28,7 @@ public class ProfessorWorkAreaJPanel extends javax.swing.JPanel {
     private JPanel userProcessContainer;
     private UserAccount userAccount;
     private ProfessorOrganization professorOrganization;
-    private StudentOrganization studentOrganization;
+    private Organization studentOrganization;
     private Enterprise enterprise;
     private EcoSystem business;
 
@@ -37,7 +37,7 @@ public class ProfessorWorkAreaJPanel extends javax.swing.JPanel {
         this.userProcessContainer = jpanel;
         this.userAccount = userAccount;
         this.professorOrganization = (ProfessorOrganization) organization;
-        this.studentOrganization = (StudentOrganization) organization;
+        this.studentOrganization =  organization;
         this.enterprise = enterprise;
         this.business = business;
     }
