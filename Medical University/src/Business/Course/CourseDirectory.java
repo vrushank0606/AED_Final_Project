@@ -4,6 +4,7 @@
  */
 package Business.Course;
 
+import Business.Course.*;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -12,25 +13,33 @@ import java.util.List;
  * @author vrushankhiremath
  */
 public class CourseDirectory {
-     private List<Course> courseDirectory = new ArrayList<>();
+//     private List<Course> courseDirectory = new ArrayList<>();
+     private List<Course> courses = new ArrayList<>();
 
     public List<Course> getCourseDirectory() {
-        return courseDirectory;
+        return courses;
+    }
+    
+     public List<Course> getCourses() {
+        return courses;
     }
 
-    public void setCourseDirectory(List<Course> courseDirectory) {
-        this.courseDirectory = courseDirectory;
+      public void setCourses(List<Course> courses) {
+        this.courses = courses;
+    }
+      
+    public void setCourseDirectory(List<Course> courses) {
+        this.courses = courses;
     }
    
 
-    public Course addNewCourse() {
-        Course NewCourse = new Course();
-        courseDirectory.add(NewCourse);
-        return NewCourse;
+    public Course addNewCourse(Course course) {
+        courses.add(course);
+        return course;
     }
 
-    public void deletePerson(Course course) {
-        courseDirectory.remove(course);
+    public void deleteCourse(Course course) {
+        courses.remove(course);
     }
 
     /*public ArrayList<Course> searchPatient(String key)

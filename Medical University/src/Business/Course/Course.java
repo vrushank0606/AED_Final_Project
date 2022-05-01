@@ -10,12 +10,35 @@ package Business.Course;
  */
 public class Course {
     
-    private String Course_name;
-    private String Course_num;
+    private String courseName;
+    private String courseNumber;
     private String department;
     private String description;
+    
+    private String medicalPractice;
+    private String learningObjective;
+    private double requirement;
    
 
+     public Course(String courseNumber) {
+        this.courseNumber = courseNumber;
+    }
+
+     public String getCourseName() {
+        return courseName;
+    }
+
+    public void setCourseName(String courseName) {
+        this.courseName = courseName;
+    }
+
+    public String getCourseNumber() {
+        return courseNumber;
+    }
+
+    public void setCourseNumber(String courseNumber) {
+        this.courseNumber = courseNumber;
+    }
 
     public String getDepartment() {
         return department;
@@ -33,25 +56,34 @@ public class Course {
         this.description = description;
     }
 
-    public String getCourse_num() {
-        return Course_num;
+    public String getMedicalPractice() {
+        return medicalPractice;
     }
 
-    public void setCourse_name(String Course_name) {
-        this.Course_name = Course_name;
+    public void setMedicalPractice(String medicalPractice) {
+        this.medicalPractice = medicalPractice;
     }
 
+    public String getLearningObjective() {
+        return learningObjective;
+    }
+
+    public void setLearningObjective(String learningObjective) {
+        this.learningObjective = learningObjective;
+    }
+
+    public double getRequirement() {
+        return requirement;
+    }
+
+    public void setRequirement(double requirement) {
+        this.requirement = requirement;
+    }
     
-    public String getCourse_name() {
-        return Course_name;
-    }
-     public void setCourse_num(String Course_num) {
-        this.Course_num = Course_num;
-    }
 
     @Override
     public String toString() {
-        return Course_name;
+        return courseName;
     }
     
 }
