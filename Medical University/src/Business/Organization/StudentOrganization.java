@@ -13,6 +13,7 @@ import java.util.ArrayList;
  *
  * @author vrushankhiremath
  */
+ //StudentOragnisation
 public class StudentOrganization extends Organization {
 
    public StudentOrganization() {
