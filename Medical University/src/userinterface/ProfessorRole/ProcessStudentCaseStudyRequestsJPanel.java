@@ -27,6 +27,7 @@ public class ProcessStudentCaseStudyRequestsJPanel extends javax.swing.JPanel {
     private JPanel userProcessContainer;
     private EcoSystem business;
     private UserAccount userAccount;
+    private Enterprise enterprise;
     private Organization studentOrganization;
 
     /**
@@ -39,7 +40,7 @@ public class ProcessStudentCaseStudyRequestsJPanel extends javax.swing.JPanel {
         this.userAccount = account;
         this.business = business;
         this.studentOrganization =  organization;
-
+        this.enterprise = enterprise;
         populateTable();
     }
 
@@ -53,9 +54,10 @@ public class ProcessStudentCaseStudyRequestsJPanel extends javax.swing.JPanel {
             row[0] = request;
             row[1] = request.getSender().getEmployee().getName();
             row[2] = ((PatientTreatmentWorkRequest) request).getStudentAssistant();
-            row[3] = request.getStatus();
+            row[3] = ((PatientTreatmentWorkRequest) request).getReasonForVisit();
             row[4] = ((PatientTreatmentWorkRequest) request).getPatient().getPatientFirstName() + " " + ((PatientTreatmentWorkRequest) request).getPatient().getPatientLastName();
             row[5] = ((PatientTreatmentWorkRequest) request).getPatient().getPatientId();
+            row[5] = ((PatientTreatmentWorkRequest) request).getCaseStudyStatus();
             model.addRow(row);
         }
         TableRowSorter<DefaultTableModel> sorter = new TableRowSorter<>(model);
@@ -71,38 +73,39 @@ public class ProcessStudentCaseStudyRequestsJPanel extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        assignJButton = new javax.swing.JButton();
-        processJButton = new javax.swing.JButton();
+        viewCaseStudyJButton = new javax.swing.JButton();
+        approveJButton = new javax.swing.JButton();
         jLabel3 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         workRequestJTable = new javax.swing.JTable();
+        refreshJButton1 = new javax.swing.JButton();
 
         setBackground(new java.awt.Color(255, 255, 255));
         setLayout(null);
 
-        assignJButton.setBackground(new java.awt.Color(2, 79, 133));
-        assignJButton.setFont(new java.awt.Font("Skia", 1, 14)); // NOI18N
-        assignJButton.setForeground(new java.awt.Color(255, 255, 255));
-        assignJButton.setText("Assign to me");
-        assignJButton.addActionListener(new java.awt.event.ActionListener() {
+        viewCaseStudyJButton.setBackground(new java.awt.Color(2, 79, 133));
+        viewCaseStudyJButton.setFont(new java.awt.Font("Skia", 1, 14)); // NOI18N
+        viewCaseStudyJButton.setForeground(new java.awt.Color(255, 255, 255));
+        viewCaseStudyJButton.setText("View Student Case Study Request");
+        viewCaseStudyJButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                assignJButtonActionPerformed(evt);
+                viewCaseStudyJButtonActionPerformed(evt);
             }
         });
-        add(assignJButton);
-        assignJButton.setBounds(220, 400, 140, 40);
+        add(viewCaseStudyJButton);
+        viewCaseStudyJButton.setBounds(150, 390, 310, 40);
 
-        processJButton.setBackground(new java.awt.Color(2, 79, 133));
-        processJButton.setFont(new java.awt.Font("Skia", 1, 14)); // NOI18N
-        processJButton.setForeground(new java.awt.Color(255, 255, 255));
-        processJButton.setText("Process");
-        processJButton.addActionListener(new java.awt.event.ActionListener() {
+        approveJButton.setBackground(new java.awt.Color(2, 79, 133));
+        approveJButton.setFont(new java.awt.Font("Skia", 1, 14)); // NOI18N
+        approveJButton.setForeground(new java.awt.Color(255, 255, 255));
+        approveJButton.setText("Approve");
+        approveJButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                processJButtonActionPerformed(evt);
+                approveJButtonActionPerformed(evt);
             }
         });
-        add(processJButton);
-        processJButton.setBounds(450, 400, 140, 40);
+        add(approveJButton);
+        approveJButton.setBounds(510, 390, 170, 40);
 
         jLabel3.setFont(new java.awt.Font("Skia", 1, 24)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(2, 79, 133));
@@ -142,40 +145,44 @@ public class ProcessStudentCaseStudyRequestsJPanel extends javax.swing.JPanel {
 
         add(jScrollPane1);
         jScrollPane1.setBounds(130, 130, 900, 220);
+
+        refreshJButton1.setBackground(new java.awt.Color(2, 79, 133));
+        refreshJButton1.setFont(new java.awt.Font("Skia", 1, 14)); // NOI18N
+        refreshJButton1.setForeground(new java.awt.Color(255, 255, 255));
+        refreshJButton1.setText("Refresh");
+        refreshJButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                refreshJButton1ActionPerformed(evt);
+            }
+        });
+        add(refreshJButton1);
+        refreshJButton1.setBounds(750, 390, 140, 40);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void assignJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_assignJButtonActionPerformed
+    private void viewCaseStudyJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_viewCaseStudyJButtonActionPerformed
         int selectedRow = workRequestJTable.getSelectedRow();
+        PatientTreatmentWorkRequest workRequest;
 
         if (selectedRow < 0) {
-            JOptionPane.showMessageDialog(null,"Please select a row to assign");
+            JOptionPane.showMessageDialog(null, "Please select a row to request");
             return;
-        }
-
-        PatientTreatmentWorkRequest request = (PatientTreatmentWorkRequest) workRequestJTable.getValueAt(selectedRow, 0);
-      if (request.getStudentAssistant()== null) {
-            if (request.getCaseStudyStatus().equalsIgnoreCase("RequestSentToProfessor")) {
-                // request.setStudentAssistant(userAccount);
-               // request.setCaseStudyStatus("Approved");
-                populateTable();
-                JOptionPane.showMessageDialog(null, "The request is assigned to you");
-            } else {
-                JOptionPane.showMessageDialog(null, "Cannot assign this case study request as the current status is: " + request.getCaseStudyStatus());
-            }
         } else {
-            if(userAccount.equals(request.getStudentAssistant()))
-            {
-                JOptionPane.showMessageDialog(null,"Request is already assigned to you");
-            }
-            else
-            {
-                JOptionPane.showMessageDialog(null, "Request is assigned to other Profesor");
-            }
-        }
+            workRequest = (PatientTreatmentWorkRequest) workRequestJTable.getValueAt(selectedRow, 0);
+            
+            if (workRequest.getStudentAssistant()!= null) {
+               
+                    CardLayout layout = (CardLayout) userProcessContainer.getLayout();
+                    userProcessContainer.add("ViewCaseStudyJPanel", new ViewCaseStudyJPanel(userProcessContainer, userAccount, enterprise, workRequest));
+                    layout.next(userProcessContainer);
+                    
+                } else {
+                    JOptionPane.showMessageDialog(null, "You are not Authorised");
+                }
+            } 
         
-    }//GEN-LAST:event_assignJButtonActionPerformed
+    }//GEN-LAST:event_viewCaseStudyJButtonActionPerformed
 
-    private void processJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_processJButtonActionPerformed
+    private void approveJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_approveJButtonActionPerformed
         int selectedRow = workRequestJTable.getSelectedRow();
 
         if (selectedRow < 0) {
@@ -190,19 +197,26 @@ public class ProcessStudentCaseStudyRequestsJPanel extends javax.swing.JPanel {
         if (request.getStudentAssistant() != null) {
             if (request.getCaseStudyStatus() == "RequestSentToProfessor") {
                 request.setCaseStudyStatus("ProfessorApproved");
+                JOptionPane.showMessageDialog(null, "Case study request approved");
             } else {
-                JOptionPane.showMessageDialog(null, "Case not in requested status");
+                JOptionPane.showMessageDialog(null, "Case study not in requested status");
             }
         } else {
-            JOptionPane.showMessageDialog(null, "Please assign the request first before proceeding");
+            JOptionPane.showMessageDialog(null, "Please approve case study requests before proceeeding.");
         }
-    }//GEN-LAST:event_processJButtonActionPerformed
+    }//GEN-LAST:event_approveJButtonActionPerformed
+
+    private void refreshJButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_refreshJButton1ActionPerformed
+        // TODO add your handling code here:
+        populateTable();
+    }//GEN-LAST:event_refreshJButton1ActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton assignJButton;
+    private javax.swing.JButton approveJButton;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JButton processJButton;
+    private javax.swing.JButton refreshJButton1;
+    private javax.swing.JButton viewCaseStudyJButton;
     private javax.swing.JTable workRequestJTable;
     // End of variables declaration//GEN-END:variables
 }

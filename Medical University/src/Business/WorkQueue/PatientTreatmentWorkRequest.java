@@ -27,6 +27,8 @@ public class PatientTreatmentWorkRequest extends WorkRequest {
     private UserAccount studentAssistant;
     private String caseStudyStatus;
     private String caseStudyResult;
+    private String caseStudyType;
+    private String caseStudyStudentMedicalPractice;
 
     
 
@@ -140,6 +142,23 @@ public class PatientTreatmentWorkRequest extends WorkRequest {
     public void setCaseStudyResult(String caseStudyResult) {
         this.caseStudyResult = caseStudyResult;
     }
+    
+    public String getCaseStudyType() {
+        return caseStudyType;
+    }
+
+    public void setCaseStudyType(String caseStudyType) {
+        this.caseStudyType = caseStudyType;
+    }
+
+    public String getCaseStudyStudentMedicalPractice() {
+        return caseStudyStudentMedicalPractice;
+    }
+
+    public void setCaseStudyStudentMedicalPractice(String caseStudyStudentMedicalPractice) {
+        this.caseStudyStudentMedicalPractice = caseStudyStudentMedicalPractice;
+    }
+    
     
     @Override
     public String toString() {

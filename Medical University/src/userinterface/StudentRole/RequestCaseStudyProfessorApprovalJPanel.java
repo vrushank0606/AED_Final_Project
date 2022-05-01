@@ -50,12 +50,12 @@ public class RequestCaseStudyProfessorApprovalJPanel extends javax.swing.JPanel 
 
         requestTestJButton = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
-        txtMessage = new javax.swing.JTextField();
+        txtCaseStudyType = new javax.swing.JTextField();
         backJButton = new javax.swing.JButton();
         valueLabel = new javax.swing.JLabel();
         enterpriseLabel = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
-        txtCaseStudyDesc = new javax.swing.JTextField();
+        txtstudentMedPractice = new javax.swing.JTextField();
         jLabel3 = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(255, 255, 255));
@@ -75,11 +75,11 @@ public class RequestCaseStudyProfessorApprovalJPanel extends javax.swing.JPanel 
 
         jLabel1.setFont(new java.awt.Font("Skia", 1, 14)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(2, 79, 133));
-        jLabel1.setText("Message:");
-        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 290, 70, -1));
+        jLabel1.setText("Case Study Type:");
+        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 280, 130, -1));
 
-        txtMessage.setFont(new java.awt.Font("Skia", 0, 14)); // NOI18N
-        add(txtMessage, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 270, 230, 80));
+        txtCaseStudyType.setFont(new java.awt.Font("Skia", 0, 14)); // NOI18N
+        add(txtCaseStudyType, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 270, 230, 80));
 
         backJButton.setBackground(new java.awt.Color(2, 79, 133));
         backJButton.setFont(new java.awt.Font("Skia", 1, 14)); // NOI18N
@@ -104,11 +104,11 @@ public class RequestCaseStudyProfessorApprovalJPanel extends javax.swing.JPanel 
 
         jLabel2.setFont(new java.awt.Font("Skia", 1, 14)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(2, 79, 133));
-        jLabel2.setText("Case Study Description:");
-        add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 200, 170, -1));
+        jLabel2.setText("Student Medical Practice:");
+        add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 200, -1, -1));
 
-        txtCaseStudyDesc.setFont(new java.awt.Font("Skia", 0, 14)); // NOI18N
-        add(txtCaseStudyDesc, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 190, 300, 70));
+        txtstudentMedPractice.setFont(new java.awt.Font("Skia", 0, 14)); // NOI18N
+        add(txtstudentMedPractice, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 190, 300, 70));
 
         jLabel3.setFont(new java.awt.Font("Skia", 1, 24)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(2, 79, 133));
@@ -118,19 +118,17 @@ public class RequestCaseStudyProfessorApprovalJPanel extends javax.swing.JPanel 
 
     private void requestTestJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_requestTestJButtonActionPerformed
 
-        String desc = txtCaseStudyDesc.getText().trim();
-        String message = txtMessage.getText().trim();
+        String studentMedPractice = txtstudentMedPractice.getText().trim();
+        txtCaseStudyType.setText(patientTreatmentWorkRequest.getCaseStudyType());
+        txtCaseStudyType.setEnabled(false);
 
-        if (desc.equals("")) {
-            JOptionPane.showMessageDialog(null, "Description cannot be blank");
-            return;
-        }
-        if (message.equals("")) {
-            JOptionPane.showMessageDialog(null, "Message cannot be blank");
+        if (studentMedPractice.equals("")) {
+            JOptionPane.showMessageDialog(null, "Student Medical Practice cannot be null cannot be blank");
             return;
         }
 
-        patientTreatmentWorkRequest.setLabTestMessage(message);
+
+        patientTreatmentWorkRequest.setCaseStudyStudentMedicalPractice(studentMedPractice);
         patientTreatmentWorkRequest.setSender(userAccount);
         patientTreatmentWorkRequest.setCaseStudyStatus("RequestSentToProfessor");
         patientTreatmentWorkRequest.setReceiver(null);
@@ -146,8 +144,8 @@ public class RequestCaseStudyProfessorApprovalJPanel extends javax.swing.JPanel 
             org.getWorkQueue().getWorkRequests().add(patientTreatmentWorkRequest);
             userAccount.getWorkQueue().getWorkRequests().add(patientTreatmentWorkRequest);
             JOptionPane.showMessageDialog(null, "Case study request submitted successfully");
-           txtMessage.setText("");
-           txtCaseStudyDesc.setText("");
+           txtCaseStudyType.setText("");
+           txtstudentMedPractice.setText("");
             requestTestJButton.setEnabled(false);
         }
 
@@ -172,8 +170,8 @@ public class RequestCaseStudyProfessorApprovalJPanel extends javax.swing.JPanel 
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JButton requestTestJButton;
-    private javax.swing.JTextField txtCaseStudyDesc;
-    private javax.swing.JTextField txtMessage;
+    private javax.swing.JTextField txtCaseStudyType;
+    private javax.swing.JTextField txtstudentMedPractice;
     private javax.swing.JLabel valueLabel;
     // End of variables declaration//GEN-END:variables
 }

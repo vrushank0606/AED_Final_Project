@@ -83,7 +83,7 @@ public class StudentCaseStudyRequestsJPanel extends javax.swing.JPanel {
         for (WorkRequest request : studentOrganization.getWorkQueue().getWorkRequests()) {
             Object[] row = new Object[6];
             row[0] = request;
-            // row[1] = request.getSender().getEmployee().getName();
+//            row[1] = request.getSender().getEmployee().getName();
             row[1] = ((PatientTreatmentWorkRequest) request).getStudentAssistant();
             row[2] = ((PatientTreatmentWorkRequest) request).getCaseStudyStatus();
             row[3] = ((PatientTreatmentWorkRequest) request).getPatient().getPatientFirstName() + " " + ((PatientTreatmentWorkRequest) request).getPatient().getPatientLastName();
@@ -109,6 +109,7 @@ public class StudentCaseStudyRequestsJPanel extends javax.swing.JPanel {
         processJButton = new javax.swing.JButton();
         jLabel3 = new javax.swing.JLabel();
         requestProfApprovalJButton = new javax.swing.JButton();
+        refreshJButton1 = new javax.swing.JButton();
 
         setBackground(new java.awt.Color(255, 255, 255));
         setLayout(null);
@@ -118,20 +119,20 @@ public class StudentCaseStudyRequestsJPanel extends javax.swing.JPanel {
         workRequestJTable.setForeground(new java.awt.Color(255, 255, 255));
         workRequestJTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null}
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null}
             },
             new String [] {
-                "Message", "Sender", "Receiver", "Case Study Status", "Patient Name", "Patient Id"
+                "Message", "Receiver", "Case Study Status", "Patient Name", "Patient Id"
             }
         ) {
             Class[] types = new Class [] {
-                java.lang.Object.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.Object.class, java.lang.Object.class
+                java.lang.Object.class, java.lang.String.class, java.lang.String.class, java.lang.Object.class, java.lang.Object.class
             };
             boolean[] canEdit = new boolean [] {
-                false, false, false, false, false, false
+                false, false, false, false, false
             };
 
             public Class getColumnClass(int columnIndex) {
@@ -157,7 +158,7 @@ public class StudentCaseStudyRequestsJPanel extends javax.swing.JPanel {
             }
         });
         add(assignJButton);
-        assignJButton.setBounds(80, 260, 140, 40);
+        assignJButton.setBounds(30, 260, 140, 40);
 
         processJButton.setBackground(new java.awt.Color(2, 79, 133));
         processJButton.setFont(new java.awt.Font("Skia", 1, 14)); // NOI18N
@@ -169,7 +170,7 @@ public class StudentCaseStudyRequestsJPanel extends javax.swing.JPanel {
             }
         });
         add(processJButton);
-        processJButton.setBounds(550, 260, 140, 40);
+        processJButton.setBounds(450, 260, 140, 40);
 
         jLabel3.setFont(new java.awt.Font("Skia", 1, 24)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(2, 79, 133));
@@ -187,7 +188,19 @@ public class StudentCaseStudyRequestsJPanel extends javax.swing.JPanel {
             }
         });
         add(requestProfApprovalJButton);
-        requestProfApprovalJButton.setBounds(260, 260, 250, 40);
+        requestProfApprovalJButton.setBounds(180, 260, 250, 40);
+
+        refreshJButton1.setBackground(new java.awt.Color(2, 79, 133));
+        refreshJButton1.setFont(new java.awt.Font("Skia", 1, 14)); // NOI18N
+        refreshJButton1.setForeground(new java.awt.Color(255, 255, 255));
+        refreshJButton1.setText("Refresh");
+        refreshJButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                refreshJButton1ActionPerformed(evt);
+            }
+        });
+        add(refreshJButton1);
+        refreshJButton1.setBounds(610, 260, 140, 40);
     }// </editor-fold>//GEN-END:initComponents
 
     private void assignJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_assignJButtonActionPerformed
@@ -206,7 +219,7 @@ public class StudentCaseStudyRequestsJPanel extends javax.swing.JPanel {
                 populateTable();
                 JOptionPane.showMessageDialog(null, "The request is assigned to you");
             } else {
-                JOptionPane.showMessageDialog(null, "Cannot assign this lab request as the current status is: " + request.getCaseStudyStatus());
+                JOptionPane.showMessageDialog(null, "Cannot assign this case study request as the current status is: " + request.getCaseStudyStatus());
             }
         } else {
             if(userAccount.equals(request.getStudentAssistant()))
@@ -222,7 +235,7 @@ public class StudentCaseStudyRequestsJPanel extends javax.swing.JPanel {
     }//GEN-LAST:event_assignJButtonActionPerformed
 
     private void processJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_processJButtonActionPerformed
-        int selectedRow = workRequestJTable.getSelectedRow();
+     int selectedRow = workRequestJTable.getSelectedRow();
 
         if (selectedRow < 0) {
             JOptionPane.showMessageDialog(null, "Please select a row to process");
@@ -241,7 +254,7 @@ public class StudentCaseStudyRequestsJPanel extends javax.swing.JPanel {
                     CardLayout layout = (CardLayout) userProcessContainer.getLayout();
                     layout.next(userProcessContainer);
                 } else {
-                    JOptionPane.showMessageDialog(null, "Cannot process the request as the status is: " + request.getStatus());
+                    JOptionPane.showMessageDialog(null, "Cannot process the request as the status is: " + request.getCaseStudyStatus());
                 }
 
             } else {
@@ -249,7 +262,7 @@ public class StudentCaseStudyRequestsJPanel extends javax.swing.JPanel {
                 JOptionPane.showMessageDialog(null, "You are not authorised to process the request");
             }
         } else {
-            JOptionPane.showMessageDialog(null, "Please assign the request first before proceeding");
+            JOptionPane.showMessageDialog(null, "Please get professor approval before processing the case study");
         }
     }//GEN-LAST:event_processJButtonActionPerformed
 
@@ -283,11 +296,17 @@ public class StudentCaseStudyRequestsJPanel extends javax.swing.JPanel {
 
     }//GEN-LAST:event_requestProfApprovalJButtonActionPerformed
 
+    private void refreshJButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_refreshJButton1ActionPerformed
+        // TODO add your handling code here:
+        populateTable();
+    }//GEN-LAST:event_refreshJButton1ActionPerformed
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton assignJButton;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JButton processJButton;
+    private javax.swing.JButton refreshJButton1;
     private javax.swing.JButton requestProfApprovalJButton;
     private javax.swing.JTable workRequestJTable;
     // End of variables declaration//GEN-END:variables

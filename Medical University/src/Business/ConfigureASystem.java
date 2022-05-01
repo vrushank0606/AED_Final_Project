@@ -162,9 +162,9 @@ public class ConfigureASystem {
                             HealthCenterEnterprise healthCenterEnterprise = (HealthCenterEnterprise) network.getEnterpriseDirectory().getEnterpriseList().get(0);
                             healthCenterEnterprise.getPatientDirectory().getPatients().add(patient);
 
-                            PatientTreatmentWorkRequest patientTreatmentWorkRequest = new PatientTreatmentWorkRequest("--", "---", patient);
-                            patientTreatmentWorkRequest.setStatus("Waiting for Doctor");
-                            patientTreatmentWorkRequest.setCaseStudyStatus("SentToStudent");
+                            PatientTreatmentWorkRequest patientTreatmentWorkRequest = new PatientTreatmentWorkRequest("--", "Heaviness in Heart", patient);
+//                            patientTreatmentWorkRequest.setStatus("Waiting for Doctor");
+//                            patientTreatmentWorkRequest.setCaseStudyStatus("SentToStudent");
                             //   patientTreatmentWorkRequest.setSender(userAccount);
 
                             Organization org = null;

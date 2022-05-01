@@ -56,15 +56,15 @@
         <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
           <Color blue="85" green="4f" red="2" type="rgb"/>
         </Property>
-        <Property name="text" type="java.lang.String" value="Message:"/>
+        <Property name="text" type="java.lang.String" value="Case Study Type:"/>
       </Properties>
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-          <AbsoluteConstraints x="300" y="290" width="70" height="-1"/>
+          <AbsoluteConstraints x="250" y="280" width="130" height="-1"/>
         </Constraint>
       </Constraints>
     </Component>
-    <Component class="javax.swing.JTextField" name="txtMessage">
+    <Component class="javax.swing.JTextField" name="txtCaseStudyType">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Skia" size="14" style="0"/>
@@ -138,15 +138,15 @@
         <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
           <Color blue="85" green="4f" red="2" type="rgb"/>
         </Property>
-        <Property name="text" type="java.lang.String" value="Case Study Description:"/>
+        <Property name="text" type="java.lang.String" value="Student Medical Practice:"/>
       </Properties>
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-          <AbsoluteConstraints x="200" y="200" width="170" height="-1"/>
+          <AbsoluteConstraints x="190" y="200" width="-1" height="-1"/>
         </Constraint>
       </Constraints>
     </Component>
-    <Component class="javax.swing.JTextField" name="txtCaseStudyDesc">
+    <Component class="javax.swing.JTextField" name="txtstudentMedPractice">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Skia" size="14" style="0"/>

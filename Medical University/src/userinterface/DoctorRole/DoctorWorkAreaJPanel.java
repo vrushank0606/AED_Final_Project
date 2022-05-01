@@ -50,7 +50,7 @@ public class DoctorWorkAreaJPanel extends javax.swing.JPanel {
         model.setRowCount(0);
 
        for (WorkRequest request : doctorOrganization.getWorkQueue().getWorkRequests()) {
-            Object[] row = new Object[8];
+            Object[] row = new Object[10];
             row[0] = ((PatientTreatmentWorkRequest) request).getRegistrationDate();
             row[1] = String.valueOf(((PatientTreatmentWorkRequest) request).getPatient().getPatientId());
             row[2] = ((PatientTreatmentWorkRequest) request).getPatient().getPatientFirstName() + " " + ((PatientTreatmentWorkRequest) request).getPatient().getPatientLastName();
@@ -59,7 +59,8 @@ public class DoctorWorkAreaJPanel extends javax.swing.JPanel {
             row[5] = ((PatientTreatmentWorkRequest) request).getLabAssistant();
             row[6] = ((PatientTreatmentWorkRequest) request).getLabResult();
             row[7] = request.getStatus();
-
+            row[8] = ((PatientTreatmentWorkRequest) request).getCaseStudyStatus();
+            row[9] = ((PatientTreatmentWorkRequest) request).getCaseStudyResult();
             model.addRow(row);
 
         }
@@ -98,23 +99,23 @@ public class DoctorWorkAreaJPanel extends javax.swing.JPanel {
         workRequestJTable.setForeground(new java.awt.Color(255, 255, 255));
         workRequestJTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null}
+                {null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null}
             },
             new String [] {
-                "Patient Registration Date", "Patient Id", "Patient Name", "Illness", "Assigned Doctor", "Lab Assistant", "Lab Result", "Treatment Status"
+                "Patient Registration Date", "Patient Id", "Patient Name", "Illness", "Assigned Doctor", "Lab Assistant", "Lab Result", "Treatment Status", "Case Study Status", "Case Study Cliniical Decision"
             }
         ) {
             boolean[] canEdit = new boolean [] {
-                false, false, false, false, false, false, false, false
+                false, false, false, false, false, false, false, false, true, true
             };
 
             public boolean isCellEditable(int rowIndex, int columnIndex) {
@@ -122,6 +123,9 @@ public class DoctorWorkAreaJPanel extends javax.swing.JPanel {
             }
         });
         jScrollPane1.setViewportView(workRequestJTable);
+        if (workRequestJTable.getColumnModel().getColumnCount() > 0) {
+            workRequestJTable.getColumnModel().getColumn(8).setResizable(false);
+        }
 
         requestTestJButton.setBackground(new java.awt.Color(2, 79, 133));
         requestTestJButton.setFont(new java.awt.Font("Skia", 1, 14)); // NOI18N
@@ -219,21 +223,21 @@ public class DoctorWorkAreaJPanel extends javax.swing.JPanel {
                                     .addComponent(jLabel1)))))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(125, 125, 125)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 899, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(btnViewPatient)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(btnAssignToMe)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(requestTestJButton1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(requestTestJButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(btnProvidePrescription)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(btnComplete)))))
-                .addContainerGap(92, Short.MAX_VALUE))
+                        .addComponent(btnViewPatient)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(btnAssignToMe)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(requestTestJButton1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(requestTestJButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(btnProvidePrescription)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(btnComplete))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(66, 66, 66)
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 1020, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(30, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -273,7 +277,7 @@ public class DoctorWorkAreaJPanel extends javax.swing.JPanel {
             workRequest = (PatientTreatmentWorkRequest) workRequestJTable.getValueAt(selectedRow, 3);
             if (workRequest.getAssignedDoctor() != null) {
                if (userAccount.equals(workRequest.getAssignedDoctor())) {
-                    if (workRequest.getStatus().equalsIgnoreCase("Under Consultation")) {
+                    if (workRequest.getStatus().equalsIgnoreCase("Patient Under Consultation")) {
 
                         CardLayout layout = (CardLayout) userProcessContainer.getLayout();
                         userProcessContainer.add("RequestLabTestJPanel", new RequestLabTestJPanel(userProcessContainer, userAccount, enterprise, workRequest));
@@ -350,7 +354,7 @@ public class DoctorWorkAreaJPanel extends javax.swing.JPanel {
             if(workRequest.getAssignedDoctor() != null)
             {
             if (userAccount.equals(workRequest.getAssignedDoctor())) {
-                if (workRequest.getStatus().equalsIgnoreCase("Lab Test Completed") || workRequest.getStatus().equalsIgnoreCase("Under Consultation")) {
+                if (workRequest.getStatus().equalsIgnoreCase("Lab Test Completed") || workRequest.getStatus().equalsIgnoreCase("Patient Under Consultation")) {
 
                     CardLayout layout = (CardLayout) userProcessContainer.getLayout();
                     userProcessContainer.add("ProvidePrescriptionJPanel", new ProvidePrescriptionJPanel(userProcessContainer, userAccount, enterprise, workRequest));
@@ -421,7 +425,7 @@ public class DoctorWorkAreaJPanel extends javax.swing.JPanel {
             workRequest = (PatientTreatmentWorkRequest) workRequestJTable.getValueAt(selectedRow, 3);
             if (workRequest.getAssignedDoctor() != null) {
                if (userAccount.equals(workRequest.getAssignedDoctor())) {
-                    if (workRequest.getStatus().equalsIgnoreCase("Under Consultation")) {
+                    if (workRequest.getStatus().equalsIgnoreCase("Patient Under Consultation")) {
 
                         CardLayout layout = (CardLayout) userProcessContainer.getLayout();
                         userProcessContainer.add("RequestStudentAssistantShipJPanel", new RequestStudentAssistantshipJPanel(userProcessContainer, userAccount, enterprise, workRequest));
