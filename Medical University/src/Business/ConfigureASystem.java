@@ -5,8 +5,14 @@ import Business.Role.SystemAdminRole;
 import Business.UserAccount.UserAccount;
 
 import Business.Enterprise.Enterprise;
+import Business.Enterprise.HealthCenterEnterprise;
+import Business.Enterprise.InsuranceCompanyEnterprise;
+import Business.Insurance.Insurance;
+import Business.InsuranceCustomer.InsuranceCustomer;
 import Business.Network.Network;
+import Business.Organization.DoctorOrganization;
 import Business.Organization.Organization;
+import Business.Patient.Patient;
 import Business.Role.AccountantRole;
 import Business.Role.DoctorRole;
 import Business.Role.EnterpriseAdminRole;
@@ -17,8 +23,10 @@ import Business.Role.LabAssistantRole;
 import Business.Role.ProfessorRole;
 import Business.Role.Role;
 import Business.Role.StudentRole;
+import Business.WorkQueue.PatientTreatmentWorkRequest;
 import java.util.ArrayList;
 import java.util.List;
+import javax.swing.JOptionPane;
 
 
 public class ConfigureASystem {
@@ -74,7 +82,9 @@ public class ConfigureASystem {
                       
                        if(o.getName() == Organization.Type.Accountant.getValue()) {
                          Employee emp = ecosystem.getEmployeeDirectory().createEmployee("accountant");
-                          o.getUserAccountDirectory().createUserAccount("AccUser", "admin", emp, new AccountantRole());
+                         o.getUserAccountDirectory().createUserAccount("AccUser", "admin", emp, new AccountantRole());
+                         
+                         
                      }
                  }
              }
@@ -92,6 +102,8 @@ public class ConfigureASystem {
                      if(o.getName() == Organization.Type.InsuranceAgent.getValue()) {
                          Employee emp = ecosystem.getEmployeeDirectory().createEmployee("iagent");
                          o.getUserAccountDirectory().createUserAccount("AgentUser", "admin", emp, new InsuranceAgentRole());
+
+                         
                      }
                      
                       if(o.getName() == Organization.Type.InsuranceFinanceOrganization.getValue()) {
@@ -101,10 +113,101 @@ public class ConfigureASystem {
                       
                        if(o.getName() == Organization.Type.InsurancePolicyPlanner.getValue()) {
                          Employee emp = ecosystem.getEmployeeDirectory().createEmployee("policy");
-                          o.getUserAccountDirectory().createUserAccount("PolicyUser", "admin", emp, new InsurancePolicyPlannerRole());
-                     }
-                 }
-             }
+                         o.getUserAccountDirectory().createUserAccount("PolicyUser", "admin", emp, new InsurancePolicyPlannerRole());
+                         
+                         InsuranceCompanyEnterprise insuranceCompanyEnterprise = (InsuranceCompanyEnterprise) e;
+                         
+                          Insurance insurance = new Insurance("insuranceA", insuranceCompanyEnterprise.getName(), 0);
+                            insurance.setPolicyTC("policytc");
+                            insurance.setMonthlyPremium(1200000);
+
+                            insuranceCompanyEnterprise.getInsurancePolicyDirectory().getPolicies().add(insurance);
+                            
+                            
+                         
+                         
+                         
+                            InsuranceCustomer insuranceCustomer = new InsuranceCustomer(insurance, "abcdefgh1234");
+
+                            insuranceCustomer.setCustomerFirstName("kri");
+                             insuranceCustomer.setCustomerLastName("kri");
+                            insuranceCustomer.setDateOfBirth("07/16/1990");
+                            insuranceCustomer.setGender("female");
+                            insuranceCustomer.setSsn("56565");
+                             insuranceCustomer.setPhoneNumber("201");
+                             insuranceCustomer.setAddress("30 alls");
+
+                             insuranceCustomer.setInsurance(insurance);
+                            insuranceCompanyEnterprise.getInsuranceCustomerDirectory().getInsuranceCustomers().add(insuranceCustomer);
+                            
+                            
+                            
+                            
+                            Patient patient = new Patient();
+            
+                            patient.setAppointmentDate("---");
+                            patient.setPatientId("123");
+                            patient.setPatientFirstName("abc");
+                            patient.setPatientLastName("def");
+                            patient.setGender("male");
+                            patient.setPatientEmail("aaaa@gmail.com");
+
+                            patient.setContactNumber("9999");
+                            patient.setPatientAge("10");
+                            patient.setSocialSecurityNumber("999");
+                            patient.setAddress("123");
+
+                            patient.setInsuranceCustomer(insuranceCustomer);
+
+                            HealthCenterEnterprise healthCenterEnterprise = (HealthCenterEnterprise) network.getEnterpriseDirectory().getEnterpriseList().get(0);
+                            healthCenterEnterprise.getPatientDirectory().getPatients().add(patient);
+
+                            PatientTreatmentWorkRequest patientTreatmentWorkRequest = new PatientTreatmentWorkRequest("--", "---", patient);
+                            patientTreatmentWorkRequest.setStatus("Waiting for Doctor");
+                            patientTreatmentWorkRequest.setCaseStudyStatus("SentToStudent");
+                            //   patientTreatmentWorkRequest.setSender(userAccount);
+
+                            Organization org = null;
+                            
+                            for(Enterprise en: network.getEnterpriseDirectory().getEnterpriseList()) {
+                                for (Organization orgs : en.getOrganizationDirectory().getOrganizations()) {
+                
+                                if (orgs instanceof DoctorOrganization) {
+                                    org =  orgs;
+                                    break;
+                                }
+                            }
+        }
+                            
+                            if (org != null) {
+                                org.getWorkQueue().getWorkRequests().add(patientTreatmentWorkRequest);
+                                userAccount.getWorkQueue().getWorkRequests().add(patientTreatmentWorkRequest);
+                            }
+
+
+
+                                     }
+                                 }
+                             }
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
             
             if (e.getEnterpriseType() == Enterprise.EnterpriseType.University) {
                 e.getOrganizationDirectory().createOrganization(Organization.Type.Professor);

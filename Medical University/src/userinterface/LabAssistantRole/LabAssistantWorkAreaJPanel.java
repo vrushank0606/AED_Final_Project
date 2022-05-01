@@ -50,7 +50,7 @@ public class LabAssistantWorkAreaJPanel extends javax.swing.JPanel {
             Object[] row = new Object[6];
             row[0] = request;
             row[1] = request.getSender().getEmployee().getName();
-            row[2] = ((PatientTreatmentWorkRequest) request).getLabAssistant();
+            row[2] = ((PatientTreatmentWorkRequest) request).getStudentAssistant();
             row[3] = request.getStatus();
             row[4] = ((PatientTreatmentWorkRequest) request).getPatient().getPatientFirstName() + " " + ((PatientTreatmentWorkRequest) request).getPatient().getPatientLastName();
             row[5] = ((PatientTreatmentWorkRequest) request).getPatient().getPatientId();
@@ -140,7 +140,7 @@ public class LabAssistantWorkAreaJPanel extends javax.swing.JPanel {
         jLabel3.setForeground(new java.awt.Color(2, 79, 133));
         jLabel3.setText("Process Requests");
         add(jLabel3);
-        jLabel3.setBounds(280, 40, 195, 29);
+        jLabel3.setBounds(235, 40, 240, 29);
     }// </editor-fold>//GEN-END:initComponents
 
     private void assignJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_assignJButtonActionPerformed

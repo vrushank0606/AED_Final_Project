@@ -115,23 +115,23 @@ public class ProcessStudentCaseStudyRequestsJPanel extends javax.swing.JPanel {
         workRequestJTable.setForeground(new java.awt.Color(255, 255, 255));
         workRequestJTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null}
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null}
             },
             new String [] {
-                "Message", "Sender", "Patient Name", "Illness", "Assigned Doctor", "Receiver", "Case Study Result", "Case Study Status"
+                "Message", "Sender", "Patient Name", "Illness", "Assigned Doctor", "Receiver", "Case Study Status"
             }
         ) {
             boolean[] canEdit = new boolean [] {
-                false, false, false, false, false, false, false, false
+                false, false, false, false, false, false, false
             };
 
             public boolean isCellEditable(int rowIndex, int columnIndex) {
@@ -153,30 +153,23 @@ public class ProcessStudentCaseStudyRequestsJPanel extends javax.swing.JPanel {
         }
 
         PatientTreatmentWorkRequest request = (PatientTreatmentWorkRequest) workRequestJTable.getValueAt(selectedRow, 0);
-        if (request.getStudentAssistant()== null) {
-            if (request.getCaseStudyStatus().equalsIgnoreCase("Requested")) {
-                request.setCaseStudyStatus("Waiting for Professor Approval");
-                 JOptionPane.showMessageDialog(null, "Cannot assign this lab request as the current status is: " + request.getStatus());
-            }else{
-                     if(request.getCaseStudyStatus().equalsIgnoreCase("Approved")) {
-                        request.setLabAssistant(userAccount);
-                        request.setCaseStudyStatus("Pending on Student Assistant");
-                        populateTable();
-                        JOptionPane.showMessageDialog(null, "The request is assigned to you");
-                         }
-                        else{
-                         JOptionPane.showMessageDialog(null, "Cannot assign this lab request as the current status is: " + request.getStatus());
-                     }
+      if (request.getLabAssistant() == null) {
+            if (request.getCaseStudyStatus().equalsIgnoreCase("RequestSentToProfessor")) {
+//                request.setStudentAssistant(userAccount);
+                request.setCaseStudyStatus("Approved");
+                populateTable();
+                JOptionPane.showMessageDialog(null, "The request is assigned to you");
+            } else {
+                JOptionPane.showMessageDialog(null, "Cannot assign this case study request as the current status is: " + request.getCaseStudyStatus());
             }
-            }
-         else {
-            if(userAccount.equals(request.getLabAssistant()))
+        } else {
+            if(userAccount.equals(request.getStudentAssistant()))
             {
                 JOptionPane.showMessageDialog(null,"Request is already assigned to you");
             }
             else
             {
-                JOptionPane.showMessageDialog(null, "Request is assigned to other Lab Assistant");
+                JOptionPane.showMessageDialog(null, "Request is assigned to other Profesor");
             }
         }
         
@@ -194,7 +187,7 @@ public class ProcessStudentCaseStudyRequestsJPanel extends javax.swing.JPanel {
 
        // request.setStatus("Processing");
         ProcessWorkRequestJPanel processWorkRequestJPanel = new ProcessWorkRequestJPanel(userProcessContainer, request);
-        if (request.getLabAssistant() != null) {
+        if (request.getStudentAssistant() != null) {
             if (userAccount.equals(request.getStudentAssistant())) {
                 if (request.getCaseStudyStatus().equalsIgnoreCase("Pending on Student Assistant")) {
 
@@ -202,7 +195,7 @@ public class ProcessStudentCaseStudyRequestsJPanel extends javax.swing.JPanel {
                     CardLayout layout = (CardLayout) userProcessContainer.getLayout();
                     layout.next(userProcessContainer);
                 } else {
-                    JOptionPane.showMessageDialog(null, "Cannot process the request as the status is: " + request.getStatus());
+                    JOptionPane.showMessageDialog(null, "Cannot process the request as the status is: " + request.getCaseStudyStatus());
                 }
 
             } else {

@@ -2,10 +2,10 @@
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
-package userinterface.DoctorRole;
+package userinterface.StudentRole;
 
 import Business.Enterprise.Enterprise;
-import Business.Organization.StudentOrganization;
+import Business.Organization.ProfessorOrganization;
 import Business.Organization.Organization;
 import Business.UserAccount.UserAccount;
 import Business.WorkQueue.PatientTreatmentWorkRequest;
@@ -18,7 +18,7 @@ import javax.swing.JPanel;
  *
  * @author ankitaindi
  */
-public class RequestStudentAssistantshipJPanel extends javax.swing.JPanel {
+public class RequestCaseStudyProfessorApprovalJPanel extends javax.swing.JPanel {
 
     private JPanel userProcessContainer;
     private Enterprise enterprise;
@@ -28,7 +28,7 @@ public class RequestStudentAssistantshipJPanel extends javax.swing.JPanel {
     /**
      * Creates new form RequestLabTestJPanel
      */
-    public RequestStudentAssistantshipJPanel(JPanel userProcessContainer, UserAccount account, Enterprise enterprise, PatientTreatmentWorkRequest patientTreatmentWorkRequest) {
+    public RequestCaseStudyProfessorApprovalJPanel(JPanel userProcessContainer, UserAccount account, Enterprise enterprise, PatientTreatmentWorkRequest patientTreatmentWorkRequest) {
         initComponents();
 
         this.userProcessContainer = userProcessContainer;
@@ -36,7 +36,7 @@ public class RequestStudentAssistantshipJPanel extends javax.swing.JPanel {
         this.userAccount = account;
         this.patientTreatmentWorkRequest = patientTreatmentWorkRequest;
         valueLabel.setText(enterprise.getName());
-        requestAssistantshipJButton.setEnabled(true);
+        requestTestJButton.setEnabled(true);
     }
 
     /**
@@ -48,38 +48,38 @@ public class RequestStudentAssistantshipJPanel extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        requestAssistantshipJButton = new javax.swing.JButton();
+        requestTestJButton = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         txtMessage = new javax.swing.JTextField();
         backJButton = new javax.swing.JButton();
         valueLabel = new javax.swing.JLabel();
         enterpriseLabel = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
-        txtStudentMedicalPractice = new javax.swing.JTextField();
+        txtCaseStudyDesc = new javax.swing.JTextField();
         jLabel3 = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(255, 255, 255));
         setForeground(new java.awt.Color(2, 79, 133));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        requestAssistantshipJButton.setBackground(new java.awt.Color(2, 79, 133));
-        requestAssistantshipJButton.setFont(new java.awt.Font("Skia", 1, 14)); // NOI18N
-        requestAssistantshipJButton.setForeground(new java.awt.Color(255, 255, 255));
-        requestAssistantshipJButton.setText("Request Assistantship");
-        requestAssistantshipJButton.addActionListener(new java.awt.event.ActionListener() {
+        requestTestJButton.setBackground(new java.awt.Color(2, 79, 133));
+        requestTestJButton.setFont(new java.awt.Font("Skia", 1, 14)); // NOI18N
+        requestTestJButton.setForeground(new java.awt.Color(255, 255, 255));
+        requestTestJButton.setText("Request Approval");
+        requestTestJButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                requestAssistantshipJButtonActionPerformed(evt);
+                requestTestJButtonActionPerformed(evt);
             }
         });
-        add(requestAssistantshipJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 290, 200, 30));
+        add(requestTestJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 380, 170, 30));
 
         jLabel1.setFont(new java.awt.Font("Skia", 1, 14)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(2, 79, 133));
         jLabel1.setText("Message:");
-        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 240, 70, -1));
+        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 290, 70, -1));
 
         txtMessage.setFont(new java.awt.Font("Skia", 0, 14)); // NOI18N
-        add(txtMessage, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 230, 200, 30));
+        add(txtMessage, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 270, 230, 80));
 
         backJButton.setBackground(new java.awt.Color(2, 79, 133));
         backJButton.setFont(new java.awt.Font("Skia", 1, 14)); // NOI18N
@@ -104,25 +104,25 @@ public class RequestStudentAssistantshipJPanel extends javax.swing.JPanel {
 
         jLabel2.setFont(new java.awt.Font("Skia", 1, 14)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(2, 79, 133));
-        jLabel2.setText("Student Medical Practice:");
-        add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 200, 180, -1));
+        jLabel2.setText("Case Study Description:");
+        add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 200, 170, -1));
 
-        txtStudentMedicalPractice.setFont(new java.awt.Font("Skia", 0, 14)); // NOI18N
-        add(txtStudentMedicalPractice, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 190, 200, 30));
+        txtCaseStudyDesc.setFont(new java.awt.Font("Skia", 0, 14)); // NOI18N
+        add(txtCaseStudyDesc, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 190, 300, 70));
 
         jLabel3.setFont(new java.awt.Font("Skia", 1, 24)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(2, 79, 133));
-        jLabel3.setText("Student Assistantship Request");
-        add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 60, -1, -1));
+        jLabel3.setText("Case Study Approval Request for Professor");
+        add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 60, -1, -1));
     }// </editor-fold>//GEN-END:initComponents
 
-    private void requestAssistantshipJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_requestAssistantshipJButtonActionPerformed
+    private void requestTestJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_requestTestJButtonActionPerformed
 
-        String studentMedicalPractice = txtStudentMedicalPractice.getText().trim();
+        String desc = txtCaseStudyDesc.getText().trim();
         String message = txtMessage.getText().trim();
 
-        if (studentMedicalPractice.equals("")) {
-            JOptionPane.showMessageDialog(null, "Student Medical Practice cannot be blank");
+        if (desc.equals("")) {
+            JOptionPane.showMessageDialog(null, "Description cannot be blank");
             return;
         }
         if (message.equals("")) {
@@ -132,12 +132,12 @@ public class RequestStudentAssistantshipJPanel extends javax.swing.JPanel {
 
         patientTreatmentWorkRequest.setLabTestMessage(message);
         patientTreatmentWorkRequest.setSender(userAccount);
-        patientTreatmentWorkRequest.setCaseStudyStatus("SentToStudent");
+        patientTreatmentWorkRequest.setCaseStudyStatus("RequestSentToProfessor");
         patientTreatmentWorkRequest.setReceiver(null);
 
         Organization org = null;
         for (Organization organization : enterprise.getOrganizationDirectory().getOrganizations()) {
-            if (organization instanceof StudentOrganization) {
+            if (organization instanceof ProfessorOrganization) {
                 org = organization;
                 break;
             }
@@ -145,21 +145,21 @@ public class RequestStudentAssistantshipJPanel extends javax.swing.JPanel {
         if (org != null) {
             org.getWorkQueue().getWorkRequests().add(patientTreatmentWorkRequest);
             userAccount.getWorkQueue().getWorkRequests().add(patientTreatmentWorkRequest);
-            JOptionPane.showMessageDialog(null, "Student assistanship submitted successfully");
+            JOptionPane.showMessageDialog(null, "Case study request submitted successfully");
            txtMessage.setText("");
-           txtStudentMedicalPractice.setText("");
-           requestAssistantshipJButton.setEnabled(false);
+           txtCaseStudyDesc.setText("");
+            requestTestJButton.setEnabled(false);
         }
 
-    }//GEN-LAST:event_requestAssistantshipJButtonActionPerformed
+    }//GEN-LAST:event_requestTestJButtonActionPerformed
 
     private void backJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backJButtonActionPerformed
 
         userProcessContainer.remove(this);
         Component[] componentArray = userProcessContainer.getComponents();
         Component component = componentArray[componentArray.length - 1];
-        DoctorWorkAreaJPanel dwjp = (DoctorWorkAreaJPanel) component;
-        dwjp.populateRequestTable();
+        StudentCaseStudyRequestsJPanel dwjp = (StudentCaseStudyRequestsJPanel) component;
+        dwjp.populateTable();
         CardLayout layout = (CardLayout) userProcessContainer.getLayout();
         layout.previous(userProcessContainer);
 
@@ -171,9 +171,9 @@ public class RequestStudentAssistantshipJPanel extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
-    private javax.swing.JButton requestAssistantshipJButton;
+    private javax.swing.JButton requestTestJButton;
+    private javax.swing.JTextField txtCaseStudyDesc;
     private javax.swing.JTextField txtMessage;
-    private javax.swing.JTextField txtStudentMedicalPractice;
     private javax.swing.JLabel valueLabel;
     // End of variables declaration//GEN-END:variables
 }

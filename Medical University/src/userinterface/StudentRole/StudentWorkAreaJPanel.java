@@ -36,6 +36,7 @@ public class StudentWorkAreaJPanel extends javax.swing.JPanel {
         this.userAccount = userAccount;
         this.studentOrganization = (StudentOrganization) organization;
         this.enterprise = enterprise;
+        this.business = business;
     }
 
     /**

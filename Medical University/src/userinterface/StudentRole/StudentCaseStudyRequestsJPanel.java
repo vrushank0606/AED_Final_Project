@@ -6,6 +6,8 @@ package userinterface.StudentRole;
 
 import Business.EcoSystem;
 import Business.Enterprise.Enterprise;
+import Business.Network.Network;
+import Business.Organization.DoctorOrganization;
 import Business.Organization.StudentOrganization;
 import Business.Organization.Organization;
 import Business.UserAccount.UserAccount;
@@ -19,14 +21,15 @@ import javax.swing.table.TableRowSorter;
 
 /**
  *
- * @author Pooja
+ * @author Sumana
  */
 public class StudentCaseStudyRequestsJPanel extends javax.swing.JPanel {
 
     private JPanel userProcessContainer;
     private EcoSystem business;
     private UserAccount userAccount;
-    private StudentOrganization studentOrganization;
+    private Organization studentOrganization;
+    private Enterprise enterprise;
 
     /**
      * Creates new form LabAssistantWorkAreaJPanel
@@ -38,6 +41,36 @@ public class StudentCaseStudyRequestsJPanel extends javax.swing.JPanel {
         this.userAccount = account;
         this.business = business;
         this.studentOrganization = (StudentOrganization) organization;
+        
+        this.enterprise = enterprise;
+        
+        Network currentNetwork = null;
+        
+        for(Network n: business.getNetworks()) {
+            
+            for(Enterprise en: n.getEnterpriseDirectory().getEnterpriseList()) {
+                if (en == enterprise) {
+                    currentNetwork = n;
+                }
+            }
+        }
+        
+        
+        
+        for(Enterprise en: currentNetwork.getEnterpriseDirectory().getEnterpriseList()) {
+            for (Organization orgs : en.getOrganizationDirectory().getOrganizations()) {
+                
+                                if (orgs instanceof DoctorOrganization) {
+                                    this.studentOrganization =  orgs;
+                                    break;
+                                }
+                            }
+        }
+        
+        
+        
+        
+        System.err.println(this.studentOrganization.getWorkQueue().getWorkRequests().size());
 
         populateTable();
     }
@@ -50,11 +83,11 @@ public class StudentCaseStudyRequestsJPanel extends javax.swing.JPanel {
         for (WorkRequest request : studentOrganization.getWorkQueue().getWorkRequests()) {
             Object[] row = new Object[6];
             row[0] = request;
-            row[1] = request.getSender().getEmployee().getName();
-            row[2] = ((PatientTreatmentWorkRequest) request).getStudentAssistant();
-            row[3] = request.getStatus();
-            row[4] = ((PatientTreatmentWorkRequest) request).getPatient().getPatientFirstName() + " " + ((PatientTreatmentWorkRequest) request).getPatient().getPatientLastName();
-            row[5] = ((PatientTreatmentWorkRequest) request).getPatient().getPatientId();
+            // row[1] = request.getSender().getEmployee().getName();
+            row[1] = ((PatientTreatmentWorkRequest) request).getStudentAssistant();
+            row[2] = ((PatientTreatmentWorkRequest) request).getCaseStudyStatus();
+            row[3] = ((PatientTreatmentWorkRequest) request).getPatient().getPatientFirstName() + " " + ((PatientTreatmentWorkRequest) request).getPatient().getPatientLastName();
+            row[4] = ((PatientTreatmentWorkRequest) request).getPatient().getPatientId();
             model.addRow(row);
         }
         TableRowSorter<DefaultTableModel> sorter = new TableRowSorter<>(model);
@@ -75,6 +108,7 @@ public class StudentCaseStudyRequestsJPanel extends javax.swing.JPanel {
         assignJButton = new javax.swing.JButton();
         processJButton = new javax.swing.JButton();
         jLabel3 = new javax.swing.JLabel();
+        requestProfApprovalJButton = new javax.swing.JButton();
 
         setBackground(new java.awt.Color(255, 255, 255));
         setLayout(null);
@@ -123,7 +157,7 @@ public class StudentCaseStudyRequestsJPanel extends javax.swing.JPanel {
             }
         });
         add(assignJButton);
-        assignJButton.setBounds(210, 250, 140, 40);
+        assignJButton.setBounds(80, 260, 140, 40);
 
         processJButton.setBackground(new java.awt.Color(2, 79, 133));
         processJButton.setFont(new java.awt.Font("Skia", 1, 14)); // NOI18N
@@ -135,13 +169,25 @@ public class StudentCaseStudyRequestsJPanel extends javax.swing.JPanel {
             }
         });
         add(processJButton);
-        processJButton.setBounds(410, 250, 140, 40);
+        processJButton.setBounds(550, 260, 140, 40);
 
         jLabel3.setFont(new java.awt.Font("Skia", 1, 24)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(2, 79, 133));
         jLabel3.setText("Case Study Work Queue");
         add(jLabel3);
         jLabel3.setBounds(230, 40, 310, 29);
+
+        requestProfApprovalJButton.setBackground(new java.awt.Color(2, 79, 133));
+        requestProfApprovalJButton.setFont(new java.awt.Font("Skia", 1, 14)); // NOI18N
+        requestProfApprovalJButton.setForeground(new java.awt.Color(255, 255, 255));
+        requestProfApprovalJButton.setText("Request Professor Approval");
+        requestProfApprovalJButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                requestProfApprovalJButtonActionPerformed(evt);
+            }
+        });
+        add(requestProfApprovalJButton);
+        requestProfApprovalJButton.setBounds(260, 260, 250, 40);
     }// </editor-fold>//GEN-END:initComponents
 
     private void assignJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_assignJButtonActionPerformed
@@ -153,30 +199,23 @@ public class StudentCaseStudyRequestsJPanel extends javax.swing.JPanel {
         }
 
         PatientTreatmentWorkRequest request = (PatientTreatmentWorkRequest) workRequestJTable.getValueAt(selectedRow, 0);
-        if (request.getStudentAssistant()== null) {
-            if (request.getCaseStudyStatus().equalsIgnoreCase("Requested")) {
-                request.setCaseStudyStatus("Waiting for Professor Approval");
-                 JOptionPane.showMessageDialog(null, "Cannot assign this lab request as the current status is: " + request.getStatus());
-            }else{
-                     if(request.getCaseStudyStatus().equalsIgnoreCase("Approved")) {
-                        request.setLabAssistant(userAccount);
-                        request.setCaseStudyStatus("Pending on Student Assistant");
-                        populateTable();
-                        JOptionPane.showMessageDialog(null, "The request is assigned to you");
-                         }
-                        else{
-                         JOptionPane.showMessageDialog(null, "Cannot assign this lab request as the current status is: " + request.getStatus());
-                     }
+         if (request.getLabAssistant() == null) {
+            if (request.getCaseStudyStatus().equalsIgnoreCase("SentToStudent")) {
+                request.setStudentAssistant(userAccount);
+                request.setCaseStudyStatus("Pending on Student Assistant");
+                populateTable();
+                JOptionPane.showMessageDialog(null, "The request is assigned to you");
+            } else {
+                JOptionPane.showMessageDialog(null, "Cannot assign this lab request as the current status is: " + request.getCaseStudyStatus());
             }
-            }
-         else {
-            if(userAccount.equals(request.getLabAssistant()))
+        } else {
+            if(userAccount.equals(request.getStudentAssistant()))
             {
                 JOptionPane.showMessageDialog(null,"Request is already assigned to you");
             }
             else
             {
-                JOptionPane.showMessageDialog(null, "Request is assigned to other Lab Assistant");
+                JOptionPane.showMessageDialog(null, "Request is assigned to other Student Assistant");
             }
         }
         
@@ -214,11 +253,44 @@ public class StudentCaseStudyRequestsJPanel extends javax.swing.JPanel {
         }
     }//GEN-LAST:event_processJButtonActionPerformed
 
+    
+    
+    private void requestProfApprovalJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_requestProfApprovalJButtonActionPerformed
+
+        int selectedRow = workRequestJTable.getSelectedRow();
+        PatientTreatmentWorkRequest workRequest;
+
+        if (selectedRow < 0) {
+            JOptionPane.showMessageDialog(null, "Please select a row to request");
+            return;
+        } else {
+            workRequest = (PatientTreatmentWorkRequest) workRequestJTable.getValueAt(selectedRow, 0);
+            if (workRequest.getAssignedDoctor() != null) {
+                if (userAccount.equals(workRequest.getAssignedDoctor())) {
+                    if (workRequest.getStatus().equalsIgnoreCase("Under Consultation")) {
+
+                        CardLayout layout = (CardLayout) userProcessContainer.getLayout();
+                        userProcessContainer.add("RequestCaseStudyProfessorApprovalJPanel", new RequestCaseStudyProfessorApprovalJPanel(userProcessContainer, userAccount, enterprise, workRequest));
+                        layout.next(userProcessContainer);
+                    } else {
+                        JOptionPane.showMessageDialog(null, "Cannot create the Lab request as the current status is " + workRequest.getStatus());
+                    }
+                } else {
+                    JOptionPane.showMessageDialog(null, "You are not Authorised");
+                }
+            } else {
+                JOptionPane.showMessageDialog(null, "Please assign the request first");
+            }
+        }
+
+    }//GEN-LAST:event_requestProfApprovalJButtonActionPerformed
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton assignJButton;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JButton processJButton;
+    private javax.swing.JButton requestProfApprovalJButton;
     private javax.swing.JTable workRequestJTable;
     // End of variables declaration//GEN-END:variables
 }
