@@ -20,9 +20,6 @@ public class TreasurerProcessWorkRequestJPanel extends javax.swing.JPanel {
     private JPanel jPanel;
     private GovernmentFundRequest governmentFundRequest;
 
-    /**
-     * Creates new form ProcessWorkRequestJPanel
-     */
     public TreasurerProcessWorkRequestJPanel(JPanel jPanel, GovernmentFundRequest fundRequest) {
         initComponents();
         this.jPanel = jPanel;

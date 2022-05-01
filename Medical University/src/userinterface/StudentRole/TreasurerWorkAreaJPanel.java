@@ -19,13 +19,11 @@ import javax.swing.table.TableRowSorter;
 
 /**
  *
- * @author
+ * @author vrushank
  */
 public class TreasurerWorkAreaJPanel extends javax.swing.JPanel {
 
-    /**
-     * Creates new form TreasurerWorkAreaJPanel
-     */
+    
     private JPanel jPanel;
     private UserAccount userAccount;
     private StudentOrganization treasurerOrganization;
