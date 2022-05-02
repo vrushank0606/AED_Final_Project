@@ -15,7 +15,7 @@ import javax.swing.JPanel;
 
 /**
  *
- * @author kavya
+ * @author Kavya
  */
 public class ProvidePrescriptionJPanel extends javax.swing.JPanel {
 
@@ -62,50 +62,44 @@ public class ProvidePrescriptionJPanel extends javax.swing.JPanel {
         txtAssignedDoctor = new javax.swing.JTextField();
         btnSubmit = new javax.swing.JButton();
         backJButton = new javax.swing.JButton();
+        jLabel2 = new javax.swing.JLabel();
 
-        setBackground(new java.awt.Color(255, 255, 255));
+        setBackground(new java.awt.Color(246, 244, 244));
         setEnabled(false);
-        setLayout(null);
+        setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel1.setFont(new java.awt.Font("Skia", 1, 24)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(51, 51, 51));
+        jLabel1.setForeground(new java.awt.Color(2, 79, 133));
         jLabel1.setText("Prescription Area");
-        add(jLabel1);
-        jLabel1.setBounds(190, 30, 228, 32);
+        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 50, 228, -1));
 
         jLabel6.setFont(new java.awt.Font("Skia", 1, 18)); // NOI18N
-        jLabel6.setForeground(new java.awt.Color(51, 51, 51));
+        jLabel6.setForeground(new java.awt.Color(2, 79, 133));
         jLabel6.setText("Patient Information");
-        add(jLabel6);
-        jLabel6.setBounds(340, 80, 220, 30);
+        add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 90, 220, 30));
 
         txtFirstName.setEditable(false);
         txtFirstName.setFont(new java.awt.Font("Skia", 0, 14)); // NOI18N
-        add(txtFirstName);
-        txtFirstName.setBounds(244, 146, 131, 23);
+        add(txtFirstName, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 150, 131, 23));
 
         jLabel7.setFont(new java.awt.Font("Skia", 1, 14)); // NOI18N
-        jLabel7.setForeground(new java.awt.Color(51, 51, 51));
+        jLabel7.setForeground(new java.awt.Color(2, 79, 133));
         jLabel7.setText("First Name :");
-        add(jLabel7);
-        jLabel7.setBounds(152, 148, 90, 19);
+        add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 160, 90, -1));
 
         jLabel10.setFont(new java.awt.Font("Skia", 1, 14)); // NOI18N
-        jLabel10.setForeground(new java.awt.Color(51, 51, 51));
+        jLabel10.setForeground(new java.awt.Color(2, 79, 133));
         jLabel10.setText("Last Name :");
-        add(jLabel10);
-        jLabel10.setBounds(406, 148, 90, 19);
+        add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 160, 90, -1));
 
         txtLastName.setEditable(false);
         txtLastName.setFont(new java.awt.Font("Skia", 0, 14)); // NOI18N
-        add(txtLastName);
-        txtLastName.setBounds(500, 146, 131, 23);
+        add(txtLastName, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 150, 131, 23));
 
         jLabel8.setFont(new java.awt.Font("Skia", 1, 14)); // NOI18N
-        jLabel8.setForeground(new java.awt.Color(51, 51, 51));
+        jLabel8.setForeground(new java.awt.Color(2, 79, 133));
         jLabel8.setText("Assigned Doctor Information :");
-        add(jLabel8);
-        jLabel8.setBounds(26, 224, 210, 19);
+        add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 230, 210, -1));
 
         txtAge.setEditable(false);
         txtAge.setFont(new java.awt.Font("Skia", 0, 14)); // NOI18N
@@ -114,44 +108,37 @@ public class ProvidePrescriptionJPanel extends javax.swing.JPanel {
                 txtAgeActionPerformed(evt);
             }
         });
-        add(txtAge);
-        txtAge.setBounds(500, 184, 131, 23);
+        add(txtAge, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 190, 131, 23));
 
         jLabel27.setFont(new java.awt.Font("Skia", 1, 14)); // NOI18N
-        jLabel27.setForeground(new java.awt.Color(51, 51, 51));
+        jLabel27.setForeground(new java.awt.Color(2, 79, 133));
         jLabel27.setText("Age :");
-        add(jLabel27);
-        jLabel27.setBounds(445, 186, 50, 19);
+        add(jLabel27, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 190, 50, -1));
 
         jLabel3.setFont(new java.awt.Font("Skia", 1, 14)); // NOI18N
-        jLabel3.setForeground(new java.awt.Color(51, 51, 51));
+        jLabel3.setForeground(new java.awt.Color(2, 79, 133));
         jLabel3.setText("Prescription:");
-        add(jLabel3);
-        jLabel3.setBounds(118, 260, 100, 19);
+        add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 270, 100, -1));
 
         txtPrescription.setColumns(20);
         txtPrescription.setFont(new java.awt.Font("Skia", 0, 14)); // NOI18N
         txtPrescription.setRows(5);
         jScrollPane1.setViewportView(txtPrescription);
 
-        add(jScrollPane1);
-        jScrollPane1.setBounds(250, 260, 400, 86);
+        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 270, 400, 86));
 
         jLabel4.setFont(new java.awt.Font("Skia", 1, 14)); // NOI18N
-        jLabel4.setForeground(new java.awt.Color(51, 51, 51));
+        jLabel4.setForeground(new java.awt.Color(2, 79, 133));
         jLabel4.setText("Patient Medical Condition :");
-        add(jLabel4);
-        jLabel4.setBounds(51, 186, 190, 19);
+        add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 190, 190, -1));
 
         txtMedicalCondition.setEditable(false);
         txtMedicalCondition.setFont(new java.awt.Font("Skia", 0, 14)); // NOI18N
-        add(txtMedicalCondition);
-        txtMedicalCondition.setBounds(245, 184, 130, 23);
+        add(txtMedicalCondition, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 190, 130, 23));
 
         txtAssignedDoctor.setEditable(false);
         txtAssignedDoctor.setFont(new java.awt.Font("Skia", 0, 14)); // NOI18N
-        add(txtAssignedDoctor);
-        txtAssignedDoctor.setBounds(244, 222, 131, 23);
+        add(txtAssignedDoctor, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 230, 131, 23));
 
         btnSubmit.setBackground(new java.awt.Color(2, 79, 133));
         btnSubmit.setFont(new java.awt.Font("Skia", 1, 14)); // NOI18N
@@ -162,8 +149,7 @@ public class ProvidePrescriptionJPanel extends javax.swing.JPanel {
                 btnSubmitActionPerformed(evt);
             }
         });
-        add(btnSubmit);
-        btnSubmit.setBounds(250, 364, 80, 27);
+        add(btnSubmit, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 370, 80, -1));
 
         backJButton.setBackground(new java.awt.Color(2, 79, 133));
         backJButton.setFont(new java.awt.Font("Skia", 1, 14)); // NOI18N
@@ -174,8 +160,12 @@ public class ProvidePrescriptionJPanel extends javax.swing.JPanel {
                 backJButtonActionPerformed(evt);
             }
         });
-        add(backJButton);
-        backJButton.setBounds(29, 11, 90, 27);
+        add(backJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(29, 11, 90, -1));
+
+        jLabel2.setBackground(new java.awt.Color(245, 243, 243));
+        jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/drugs.jpeg"))); // NOI18N
+        add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(-20, 10, 290, 280));
     }// </editor-fold>//GEN-END:initComponents
 
     private void txtAgeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtAgeActionPerformed
@@ -215,6 +205,7 @@ public class ProvidePrescriptionJPanel extends javax.swing.JPanel {
     private javax.swing.JButton btnSubmit;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel27;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;

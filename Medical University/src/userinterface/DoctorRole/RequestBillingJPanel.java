@@ -19,7 +19,7 @@ import javax.swing.JPanel;
 
 /**
  *
- * @author kavya 
+ * @author Kavya 
  */
 public class RequestBillingJPanel extends javax.swing.JPanel {
 
@@ -87,59 +87,59 @@ public class RequestBillingJPanel extends javax.swing.JPanel {
         jLabel6.setForeground(new java.awt.Color(2, 79, 133));
         jLabel6.setText("Patient Information");
         add(jLabel6);
-        jLabel6.setBounds(60, 80, 180, 24);
+        jLabel6.setBounds(330, 100, 180, 18);
 
         txtFirstName.setEditable(false);
         add(txtFirstName);
-        txtFirstName.setBounds(150, 130, 131, 23);
+        txtFirstName.setBounds(270, 140, 131, 23);
 
         jLabel7.setFont(new java.awt.Font("Skia", 1, 14)); // NOI18N
         jLabel7.setForeground(new java.awt.Color(2, 79, 133));
         jLabel7.setText("First Name :");
         add(jLabel7);
-        jLabel7.setBounds(60, 130, 100, 20);
+        jLabel7.setBounds(160, 150, 100, 20);
 
         jLabel10.setFont(new java.awt.Font("Skia", 1, 14)); // NOI18N
         jLabel10.setForeground(new java.awt.Color(2, 79, 133));
         jLabel10.setText("Last Name :");
         add(jLabel10);
-        jLabel10.setBounds(60, 170, 90, 20);
+        jLabel10.setBounds(410, 150, 90, 20);
 
         txtLastName.setEditable(false);
         add(txtLastName);
-        txtLastName.setBounds(150, 170, 131, 23);
+        txtLastName.setBounds(510, 140, 131, 23);
 
         jLabel8.setFont(new java.awt.Font("Skia", 1, 14)); // NOI18N
         jLabel8.setForeground(new java.awt.Color(2, 79, 133));
         jLabel8.setText("Assigned Doctor :");
         add(jLabel8);
-        jLabel8.setBounds(20, 210, 130, 20);
+        jLabel8.setBounds(140, 180, 130, 20);
 
         txtAssignedDoctor.setEditable(false);
         add(txtAssignedDoctor);
-        txtAssignedDoctor.setBounds(150, 210, 130, 23);
+        txtAssignedDoctor.setBounds(270, 180, 130, 23);
 
         jLabel2.setFont(new java.awt.Font("Skia", 1, 14)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(2, 79, 133));
         jLabel2.setText("Patient Id:");
         add(jLabel2);
-        jLabel2.setBounds(70, 250, 70, 20);
+        jLabel2.setBounds(410, 180, 90, 20);
 
         txtPatientId.setEditable(false);
         add(txtPatientId);
-        txtPatientId.setBounds(150, 250, 131, 23);
+        txtPatientId.setBounds(510, 180, 131, 23);
 
         jLabel3.setFont(new java.awt.Font("Skia", 1, 18)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(2, 79, 133));
         jLabel3.setText("Billing Information");
         add(jLabel3);
-        jLabel3.setBounds(450, 80, 170, 24);
+        jLabel3.setBounds(340, 240, 170, 18);
 
         jLabel4.setFont(new java.awt.Font("Skia", 1, 14)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(2, 79, 133));
         jLabel4.setText("Consultation Charges :");
         add(jLabel4);
-        jLabel4.setBounds(370, 130, 160, 20);
+        jLabel4.setBounds(270, 280, 160, 20);
 
         txtConsultationCharges.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -147,21 +147,21 @@ public class RequestBillingJPanel extends javax.swing.JPanel {
             }
         });
         add(txtConsultationCharges);
-        txtConsultationCharges.setBounds(550, 130, 82, 23);
+        txtConsultationCharges.setBounds(450, 280, 82, 23);
 
         jLabel5.setFont(new java.awt.Font("Skia", 1, 14)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(2, 79, 133));
         jLabel5.setText("Medication Charges :");
         add(jLabel5);
-        jLabel5.setBounds(380, 200, 150, 20);
+        jLabel5.setBounds(280, 350, 150, 20);
         add(txtMedicationCharges);
-        txtMedicationCharges.setBounds(550, 200, 82, 23);
+        txtMedicationCharges.setBounds(450, 350, 82, 23);
 
         jLabel11.setFont(new java.awt.Font("Skia", 1, 14)); // NOI18N
         jLabel11.setForeground(new java.awt.Color(2, 79, 133));
         jLabel11.setText("Lab Test Charges :");
         add(jLabel11);
-        jLabel11.setBounds(390, 160, 140, 20);
+        jLabel11.setBounds(290, 310, 140, 20);
 
         txtLabCharges.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -169,15 +169,15 @@ public class RequestBillingJPanel extends javax.swing.JPanel {
             }
         });
         add(txtLabCharges);
-        txtLabCharges.setBounds(550, 160, 82, 23);
+        txtLabCharges.setBounds(450, 310, 82, 23);
 
         jLabel12.setFont(new java.awt.Font("Skia", 1, 14)); // NOI18N
         jLabel12.setForeground(new java.awt.Color(2, 79, 133));
         jLabel12.setText("Miscellaneous Charges :");
         add(jLabel12);
-        jLabel12.setBounds(360, 230, 170, 20);
+        jLabel12.setBounds(260, 380, 170, 20);
         add(txtMiscellaneousCharges);
-        txtMiscellaneousCharges.setBounds(550, 230, 82, 23);
+        txtMiscellaneousCharges.setBounds(450, 380, 82, 23);
 
         btnSendBillingRequest.setBackground(new java.awt.Color(2, 79, 133));
         btnSendBillingRequest.setFont(new java.awt.Font("Skia", 1, 14)); // NOI18N
@@ -189,7 +189,7 @@ public class RequestBillingJPanel extends javax.swing.JPanel {
             }
         });
         add(btnSendBillingRequest);
-        btnSendBillingRequest.setBounds(330, 290, 190, 30);
+        btnSendBillingRequest.setBounds(320, 430, 190, 30);
 
         backBtn.setBackground(new java.awt.Color(2, 79, 133));
         backBtn.setFont(new java.awt.Font("Skia", 1, 14)); // NOI18N
@@ -201,7 +201,7 @@ public class RequestBillingJPanel extends javax.swing.JPanel {
             }
         });
         add(backBtn);
-        backBtn.setBounds(30, 30, 120, 27);
+        backBtn.setBounds(30, 30, 120, 29);
     }// </editor-fold>//GEN-END:initComponents
 
     private void txtLabChargesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtLabChargesActionPerformed
