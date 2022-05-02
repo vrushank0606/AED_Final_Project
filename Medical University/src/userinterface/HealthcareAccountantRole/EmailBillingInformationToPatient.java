@@ -58,6 +58,7 @@ public class EmailBillingInformationToPatient extends javax.swing.JPanel {
 
         jLabel1.setBackground(new java.awt.Color(255, 255, 255));
         jLabel1.setFont(new java.awt.Font("Skia", 1, 24)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(2, 79, 133));
         jLabel1.setText("Email Billing Information to Patient");
 
         emailTxtFiled.setColumns(20);
