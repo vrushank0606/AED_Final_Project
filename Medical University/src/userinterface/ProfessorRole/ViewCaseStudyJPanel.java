@@ -14,7 +14,7 @@ import javax.swing.JPanel;
 
 /**
  *
- * @author ankitaindi
+ * @author sumana
  */
 public class ViewCaseStudyJPanel extends javax.swing.JPanel {
 
@@ -60,10 +60,12 @@ public class ViewCaseStudyJPanel extends javax.swing.JPanel {
         txtCaseStudyType = new javax.swing.JTextField();
 
         setBackground(new java.awt.Color(255, 255, 255));
+        setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel1.setFont(new java.awt.Font("Skia", 1, 24)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(2, 79, 133));
         jLabel1.setText("Case Study Request Report");
+        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(297, 32, -1, -1));
 
         txtAge.setEditable(false);
         txtAge.setFont(new java.awt.Font("Skia", 0, 14)); // NOI18N
@@ -72,28 +74,35 @@ public class ViewCaseStudyJPanel extends javax.swing.JPanel {
                 txtAgeActionPerformed(evt);
             }
         });
+        add(txtAge, new org.netbeans.lib.awtextra.AbsoluteConstraints(478, 103, 139, -1));
 
         jLabel24.setFont(new java.awt.Font("Skia", 1, 14)); // NOI18N
         jLabel24.setForeground(new java.awt.Color(2, 79, 133));
         jLabel24.setText("Age :");
+        add(jLabel24, new org.netbeans.lib.awtextra.AbsoluteConstraints(426, 108, -1, -1));
 
         jLabel2.setFont(new java.awt.Font("Skia", 1, 14)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(2, 79, 133));
         jLabel2.setText("Patient Medical Condition:");
+        add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 170, -1, -1));
 
         jLabel3.setFont(new java.awt.Font("Skia", 1, 14)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(2, 79, 133));
         jLabel3.setText("Student Medical Practice :");
+        add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 230, -1, -1));
 
         txtPatientId.setEditable(false);
         txtPatientId.setFont(new java.awt.Font("Skia", 0, 14)); // NOI18N
+        add(txtPatientId, new org.netbeans.lib.awtextra.AbsoluteConstraints(228, 103, 128, -1));
 
         jLabel4.setFont(new java.awt.Font("Skia", 1, 14)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(2, 79, 133));
         jLabel4.setText("Patient ID :");
+        add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(139, 108, -1, -1));
 
         txtMedicalCondition.setEditable(false);
         txtMedicalCondition.setFont(new java.awt.Font("Skia", 0, 14)); // NOI18N
+        add(txtMedicalCondition, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 170, 386, -1));
 
         backJButton.setBackground(new java.awt.Color(2, 79, 133));
         backJButton.setFont(new java.awt.Font("Skia", 1, 14)); // NOI18N
@@ -104,80 +113,20 @@ public class ViewCaseStudyJPanel extends javax.swing.JPanel {
                 backJButtonActionPerformed(evt);
             }
         });
+        add(backJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(27, 16, -1, -1));
 
         txtMedicalPractice.setEditable(false);
         txtMedicalPractice.setFont(new java.awt.Font("Skia", 0, 14)); // NOI18N
+        add(txtMedicalPractice, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 220, 386, -1));
 
         jLabel5.setFont(new java.awt.Font("Skia", 1, 14)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(2, 79, 133));
-        jLabel5.setText("Case Study Type");
+        jLabel5.setText("Case Study Type:");
+        add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 280, -1, -1));
 
         txtCaseStudyType.setEditable(false);
         txtCaseStudyType.setFont(new java.awt.Font("Skia", 0, 14)); // NOI18N
-
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
-        this.setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(27, 27, 27)
-                        .addComponent(backJButton)
-                        .addGap(193, 193, 193)
-                        .addComponent(jLabel1))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(129, 129, 129)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jLabel3)
-                            .addComponent(jLabel2)
-                            .addComponent(jLabel5))
-                        .addGap(39, 39, 39)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                            .addComponent(txtMedicalCondition, javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(txtMedicalPractice, javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(txtCaseStudyType, javax.swing.GroupLayout.DEFAULT_SIZE, 386, Short.MAX_VALUE)))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(139, 139, 139)
-                        .addComponent(jLabel4)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(txtPatientId, javax.swing.GroupLayout.PREFERRED_SIZE, 128, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(70, 70, 70)
-                        .addComponent(jLabel24)
-                        .addGap(18, 18, 18)
-                        .addComponent(txtAge, javax.swing.GroupLayout.PREFERRED_SIZE, 139, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(141, Short.MAX_VALUE))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(16, 16, 16)
-                        .addComponent(backJButton))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(32, 32, 32)
-                        .addComponent(jLabel1)))
-                .addGap(46, 46, 46)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel4)
-                    .addComponent(txtPatientId, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel24)
-                    .addComponent(txtAge, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(93, 93, 93)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel2)
-                    .addComponent(txtMedicalCondition, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(43, 43, 43)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel3)
-                    .addComponent(txtMedicalPractice, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(46, 46, 46)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel5)
-                    .addComponent(txtCaseStudyType, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(186, Short.MAX_VALUE))
-        );
+        add(txtCaseStudyType, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 270, 386, -1));
     }// </editor-fold>//GEN-END:initComponents
 
     private void txtAgeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtAgeActionPerformed

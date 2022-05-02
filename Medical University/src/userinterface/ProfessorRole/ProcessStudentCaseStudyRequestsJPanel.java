@@ -20,7 +20,7 @@ import javax.swing.table.TableRowSorter;
 
 /**
  *
- * @author Pooja
+ * @author sumana
  */
 public class ProcessStudentCaseStudyRequestsJPanel extends javax.swing.JPanel {
 
@@ -50,20 +50,20 @@ public class ProcessStudentCaseStudyRequestsJPanel extends javax.swing.JPanel {
         model.setRowCount(0);
 
         for (WorkRequest request : studentOrganization.getWorkQueue().getWorkRequests()) {
-            Object[] row = new Object[6];
+            Object[] row = new Object[7];
             row[0] = request;
             row[1] = request.getSender().getEmployee().getName();
-            row[2] = ((PatientTreatmentWorkRequest) request).getStudentAssistant();
+            row[2] = ((PatientTreatmentWorkRequest) request).getPatient().getPatientFirstName() + " " + ((PatientTreatmentWorkRequest) request).getPatient().getPatientLastName();
             row[3] = ((PatientTreatmentWorkRequest) request).getReasonForVisit();
-            row[4] = ((PatientTreatmentWorkRequest) request).getPatient().getPatientFirstName() + " " + ((PatientTreatmentWorkRequest) request).getPatient().getPatientLastName();
-            row[5] = ((PatientTreatmentWorkRequest) request).getPatient().getPatientId();
-            row[5] = ((PatientTreatmentWorkRequest) request).getCaseStudyStatus();
+            row[4] = ((PatientTreatmentWorkRequest) request).getAssignedDoctor();
+            row[5] = ((PatientTreatmentWorkRequest) request).getStudentAssistant();
+            row[6] = ((PatientTreatmentWorkRequest) request).getCaseStudyStatus();
             model.addRow(row);
         }
         TableRowSorter<DefaultTableModel> sorter = new TableRowSorter<>(model);
         workRequestJTable.setRowSorter(sorter);
     }
-
+    //((PatientTreatmentWorkRequest) request).getStudentAssistant();
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always

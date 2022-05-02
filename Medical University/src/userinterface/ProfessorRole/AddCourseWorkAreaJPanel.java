@@ -20,7 +20,7 @@ import javax.swing.table.TableRowSorter;
 
 /**
  *
- * @author Vaishnavi
+ * @author sumana
  */
 public class AddCourseWorkAreaJPanel extends javax.swing.JPanel {
 
@@ -71,14 +71,17 @@ public class AddCourseWorkAreaJPanel extends javax.swing.JPanel {
         txtCourseName = new javax.swing.JTextField();
 
         setBackground(new java.awt.Color(255, 255, 255));
+        setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel1.setFont(new java.awt.Font("Skia", 1, 18)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(2, 79, 133));
         jLabel1.setText("Create a New Course");
+        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 70, 218, -1));
 
         lblCourseName.setFont(new java.awt.Font("Skia", 1, 14)); // NOI18N
         lblCourseName.setForeground(new java.awt.Color(2, 79, 133));
         lblCourseName.setText("Course Name");
+        add(lblCourseName, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 150, -1, -1));
 
         txtCourseNumber.setFont(new java.awt.Font("Skia", 0, 14)); // NOI18N
         txtCourseNumber.addActionListener(new java.awt.event.ActionListener() {
@@ -86,26 +89,33 @@ public class AddCourseWorkAreaJPanel extends javax.swing.JPanel {
                 txtCourseNumberActionPerformed(evt);
             }
         });
+        add(txtCourseNumber, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 100, 158, -1));
 
         txtMedicalPractice.setFont(new java.awt.Font("Skia", 0, 14)); // NOI18N
+        add(txtMedicalPractice, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 100, 158, -1));
 
         lblMedicalPractice.setFont(new java.awt.Font("Skia", 1, 14)); // NOI18N
         lblMedicalPractice.setForeground(new java.awt.Color(2, 79, 133));
         lblMedicalPractice.setText("Medical Practice");
+        add(lblMedicalPractice, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 110, -1, -1));
 
         txtRequirement.setFont(new java.awt.Font("Skia", 0, 14)); // NOI18N
+        add(txtRequirement, new org.netbeans.lib.awtextra.AbsoluteConstraints(890, 100, 158, -1));
 
         lblRequirement.setFont(new java.awt.Font("Skia", 1, 14)); // NOI18N
         lblRequirement.setForeground(new java.awt.Color(2, 79, 133));
         lblRequirement.setText("Requirement");
+        add(lblRequirement, new org.netbeans.lib.awtextra.AbsoluteConstraints(780, 110, -1, -1));
 
         jLabel5.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(255, 255, 255));
         jLabel5.setText("%");
+        add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(646, 462, -1, -1));
 
         jLabel6.setFont(new java.awt.Font("Skia", 1, 24)); // NOI18N
         jLabel6.setForeground(new java.awt.Color(2, 79, 133));
         jLabel6.setText("Course Work Area");
+        add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 20, 227, 26));
 
         tblPolicies.setBackground(new java.awt.Color(2, 79, 133));
         tblPolicies.setFont(new java.awt.Font("Skia", 0, 14)); // NOI18N
@@ -131,6 +141,8 @@ public class AddCourseWorkAreaJPanel extends javax.swing.JPanel {
         });
         jScrollPane1.setViewportView(tblPolicies);
 
+        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 250, 963, 92));
+
         btnAddCourse.setBackground(new java.awt.Color(2, 79, 133));
         btnAddCourse.setFont(new java.awt.Font("Skia", 1, 14)); // NOI18N
         btnAddCourse.setForeground(new java.awt.Color(255, 255, 255));
@@ -140,16 +152,20 @@ public class AddCourseWorkAreaJPanel extends javax.swing.JPanel {
                 btnAddCourseActionPerformed(evt);
             }
         });
+        add(btnAddCourse, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 190, -1, 40));
 
         lblObjective.setFont(new java.awt.Font("Skia", 1, 14)); // NOI18N
         lblObjective.setForeground(new java.awt.Color(2, 79, 133));
         lblObjective.setText("Learning Objective");
+        add(lblObjective, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 150, -1, -1));
 
         txtLearningObjective.setFont(new java.awt.Font("Skia", 0, 14)); // NOI18N
+        add(txtLearningObjective, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 140, 158, -1));
 
         lblCourseNumber.setFont(new java.awt.Font("Skia", 1, 14)); // NOI18N
         lblCourseNumber.setForeground(new java.awt.Color(2, 79, 133));
         lblCourseNumber.setText("Course Number");
+        add(lblCourseNumber, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 110, -1, -1));
 
         txtCourseName.setFont(new java.awt.Font("Skia", 0, 14)); // NOI18N
         txtCourseName.addActionListener(new java.awt.event.ActionListener() {
@@ -157,83 +173,7 @@ public class AddCourseWorkAreaJPanel extends javax.swing.JPanel {
                 txtCourseNameActionPerformed(evt);
             }
         });
-
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
-        this.setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(23, 23, 23)
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 963, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(386, 386, 386)
-                        .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 227, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(397, 397, 397)
-                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 218, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(307, 307, 307)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(lblCourseName, javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(lblMedicalPractice, javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(lblObjective, javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(lblRequirement, javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(lblCourseNumber, javax.swing.GroupLayout.Alignment.TRAILING))
-                        .addGap(36, 36, 36)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(btnAddCourse)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(txtCourseNumber, javax.swing.GroupLayout.PREFERRED_SIZE, 158, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(txtMedicalPractice, javax.swing.GroupLayout.PREFERRED_SIZE, 158, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(txtLearningObjective, javax.swing.GroupLayout.PREFERRED_SIZE, 158, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(txtCourseName, javax.swing.GroupLayout.PREFERRED_SIZE, 158, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGap(18, 18, 18)
-                                .addComponent(jLabel5))
-                            .addComponent(txtRequirement, javax.swing.GroupLayout.PREFERRED_SIZE, 158, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addContainerGap(63, Short.MAX_VALUE))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(99, 99, 99)
-                .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(50, 50, 50)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 92, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(51, 51, 51)
-                .addComponent(jLabel1)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(126, 126, 126)
-                        .addComponent(jLabel5)
-                        .addGap(41, 41, 41))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addGap(18, 18, 18)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(lblCourseNumber)
-                            .addComponent(txtCourseNumber, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(lblCourseName)
-                            .addComponent(txtCourseName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(txtMedicalPractice, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(lblMedicalPractice))
-                        .addGap(18, 18, 18)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(txtLearningObjective, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(lblObjective))
-                        .addGap(18, 18, 18)))
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(txtRequirement, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(lblRequirement))
-                .addGap(18, 18, 18)
-                .addComponent(btnAddCourse, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(118, Short.MAX_VALUE))
-        );
+        add(txtCourseName, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 140, 158, -1));
     }// </editor-fold>//GEN-END:initComponents
       private void refresh() {
         txtCourseNumber.setText(UUID.randomUUID().toString().substring(0, 7));

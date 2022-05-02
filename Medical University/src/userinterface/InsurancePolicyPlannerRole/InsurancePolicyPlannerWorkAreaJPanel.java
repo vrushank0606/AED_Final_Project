@@ -18,7 +18,7 @@ import javax.swing.table.TableRowSorter;
 
 /**
  *
- * @author Vaishnavi
+ * @author sumana
  */
 public class InsurancePolicyPlannerWorkAreaJPanel extends javax.swing.JPanel {
 
@@ -65,14 +65,17 @@ public class InsurancePolicyPlannerWorkAreaJPanel extends javax.swing.JPanel {
         txtMonthlyPrem = new javax.swing.JTextField();
 
         setBackground(new java.awt.Color(255, 255, 255));
+        setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel1.setFont(new java.awt.Font("Skia", 1, 18)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(2, 79, 133));
         jLabel1.setText("Create a New Policy");
+        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 80, 218, -1));
 
         jLabel2.setFont(new java.awt.Font("Skia", 1, 14)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(2, 79, 133));
         jLabel2.setText("Policy Name: ");
+        add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 130, -1, -1));
 
         txtPolicyName.setFont(new java.awt.Font("Skia", 0, 14)); // NOI18N
         txtPolicyName.addActionListener(new java.awt.event.ActionListener() {
@@ -80,26 +83,33 @@ public class InsurancePolicyPlannerWorkAreaJPanel extends javax.swing.JPanel {
                 txtPolicyNameActionPerformed(evt);
             }
         });
+        add(txtPolicyName, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 120, 158, -1));
 
         txtPolicyCoverage.setFont(new java.awt.Font("Skia", 0, 14)); // NOI18N
+        add(txtPolicyCoverage, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 120, 158, -1));
 
         jLabel3.setFont(new java.awt.Font("Skia", 1, 14)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(2, 79, 133));
         jLabel3.setText("Policy Coverage: ");
+        add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 130, -1, -1));
 
         txtPolicyTC.setFont(new java.awt.Font("Skia", 0, 14)); // NOI18N
+        add(txtPolicyTC, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 150, 158, -1));
 
         jLabel4.setFont(new java.awt.Font("Skia", 1, 14)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(2, 79, 133));
         jLabel4.setText("Policy Terms & Condition: ");
+        add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 160, -1, -1));
 
         jLabel5.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(255, 255, 255));
         jLabel5.setText("%");
+        add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(692, 465, -1, -1));
 
         jLabel6.setFont(new java.awt.Font("Skia", 1, 24)); // NOI18N
         jLabel6.setForeground(new java.awt.Color(2, 79, 133));
         jLabel6.setText("Policy Planner Work Area");
+        add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 30, 332, 26));
 
         tblPolicies.setBackground(new java.awt.Color(2, 79, 133));
         tblPolicies.setFont(new java.awt.Font("Skia", 0, 14)); // NOI18N
@@ -125,6 +135,8 @@ public class InsurancePolicyPlannerWorkAreaJPanel extends javax.swing.JPanel {
         });
         jScrollPane1.setViewportView(tblPolicies);
 
+        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 250, 963, 92));
+
         btnCreatePolicy.setBackground(new java.awt.Color(2, 79, 133));
         btnCreatePolicy.setFont(new java.awt.Font("Skia", 1, 14)); // NOI18N
         btnCreatePolicy.setForeground(new java.awt.Color(255, 255, 255));
@@ -134,85 +146,15 @@ public class InsurancePolicyPlannerWorkAreaJPanel extends javax.swing.JPanel {
                 btnCreatePolicyActionPerformed(evt);
             }
         });
+        add(btnCreatePolicy, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 200, -1, 40));
 
         jLabel7.setFont(new java.awt.Font("Skia", 1, 14)); // NOI18N
         jLabel7.setForeground(new java.awt.Color(2, 79, 133));
         jLabel7.setText("Monthly Premium(USD):");
+        add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 160, -1, -1));
 
         txtMonthlyPrem.setFont(new java.awt.Font("Skia", 0, 14)); // NOI18N
-
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
-        this.setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(23, 23, 23)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 963, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(315, 315, 315)
-                                .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 332, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(307, 307, 307)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel2, javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(jLabel3, javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(jLabel7, javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(jLabel4, javax.swing.GroupLayout.Alignment.TRAILING))
-                                .addGap(36, 36, 36)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(txtPolicyName, javax.swing.GroupLayout.PREFERRED_SIZE, 158, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(txtPolicyCoverage, javax.swing.GroupLayout.PREFERRED_SIZE, 158, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(txtMonthlyPrem, javax.swing.GroupLayout.PREFERRED_SIZE, 158, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(txtPolicyTC, javax.swing.GroupLayout.PREFERRED_SIZE, 158, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGap(18, 18, 18)
-                                .addComponent(jLabel5))
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(172, 172, 172)
-                                .addComponent(btnCreatePolicy))
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(117, 117, 117)
-                                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 218, javax.swing.GroupLayout.PREFERRED_SIZE)))))
-                .addContainerGap(63, Short.MAX_VALUE))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(99, 99, 99)
-                .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(50, 50, 50)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 92, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(50, 50, 50)
-                .addComponent(jLabel1)
-                .addGap(30, 30, 30)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(txtPolicyName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel2))
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(txtPolicyCoverage, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel3))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(txtMonthlyPrem, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel7))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(txtPolicyTC, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel4)))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(75, 75, 75)
-                        .addComponent(jLabel5)))
-                .addGap(30, 30, 30)
-                .addComponent(btnCreatePolicy, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(145, Short.MAX_VALUE))
-        );
+        add(txtMonthlyPrem, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 150, 158, -1));
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnCreatePolicyActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCreatePolicyActionPerformed

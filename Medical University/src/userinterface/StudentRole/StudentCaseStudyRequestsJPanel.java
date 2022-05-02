@@ -21,7 +21,7 @@ import javax.swing.table.TableRowSorter;
 
 /**
  *
- * @author Sumana
+ * @author sumana
  */
 public class StudentCaseStudyRequestsJPanel extends javax.swing.JPanel {
 
@@ -212,7 +212,7 @@ public class StudentCaseStudyRequestsJPanel extends javax.swing.JPanel {
         }
 
         PatientTreatmentWorkRequest request = (PatientTreatmentWorkRequest) workRequestJTable.getValueAt(selectedRow, 0);
-         if (request.getLabAssistant() == null) {
+         if (request.getStudentAssistant() == null) {
             if (request.getCaseStudyStatus().equalsIgnoreCase("SentToStudent")) {
                 request.setStudentAssistant(userAccount);
                 request.setCaseStudyStatus("Pending on Student Assistant");

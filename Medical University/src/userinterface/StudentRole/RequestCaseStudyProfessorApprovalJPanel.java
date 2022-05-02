@@ -16,7 +16,7 @@ import javax.swing.JPanel;
 
 /**
  *
- * @author ankitaindi
+ * @author sumana
  */
 public class RequestCaseStudyProfessorApprovalJPanel extends javax.swing.JPanel {
 
@@ -71,15 +71,15 @@ public class RequestCaseStudyProfessorApprovalJPanel extends javax.swing.JPanel 
                 requestTestJButtonActionPerformed(evt);
             }
         });
-        add(requestTestJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 380, 170, 30));
+        add(requestTestJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 310, 170, 30));
 
         jLabel1.setFont(new java.awt.Font("Skia", 1, 14)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(2, 79, 133));
         jLabel1.setText("Case Study Type:");
-        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 280, 130, -1));
+        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 250, 130, -1));
 
         txtCaseStudyType.setFont(new java.awt.Font("Skia", 0, 14)); // NOI18N
-        add(txtCaseStudyType, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 270, 230, 80));
+        add(txtCaseStudyType, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 230, 230, 60));
 
         backJButton.setBackground(new java.awt.Color(2, 79, 133));
         backJButton.setFont(new java.awt.Font("Skia", 1, 14)); // NOI18N
@@ -105,10 +105,10 @@ public class RequestCaseStudyProfessorApprovalJPanel extends javax.swing.JPanel 
         jLabel2.setFont(new java.awt.Font("Skia", 1, 14)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(2, 79, 133));
         jLabel2.setText("Student Medical Practice:");
-        add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 200, -1, -1));
+        add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 180, -1, -1));
 
         txtstudentMedPractice.setFont(new java.awt.Font("Skia", 0, 14)); // NOI18N
-        add(txtstudentMedPractice, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 190, 300, 70));
+        add(txtstudentMedPractice, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 150, 300, 70));
 
         jLabel3.setFont(new java.awt.Font("Skia", 1, 24)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(2, 79, 133));

@@ -32,7 +32,7 @@ import javax.swing.table.TableRowSorter;
 
 /**
  *
- * @author rakesh
+ * @author sumana
  */
 
 public class RegisterCourseJPanel extends javax.swing.JPanel {
@@ -152,7 +152,6 @@ public class RegisterCourseJPanel extends javax.swing.JPanel {
         tblCourse = new javax.swing.JTable();
         jLabel16 = new javax.swing.JLabel();
         backBtn = new javax.swing.JButton();
-        jLabel13 = new javax.swing.JLabel();
         jLabel14 = new javax.swing.JLabel();
         txtCourseName = new javax.swing.JTextField();
         txtMedicalPractice = new javax.swing.JTextField();
@@ -167,18 +166,22 @@ public class RegisterCourseJPanel extends javax.swing.JPanel {
         });
 
         setBackground(new java.awt.Color(255, 255, 255));
+        setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel1.setFont(new java.awt.Font("Skia", 1, 28)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(2, 79, 133));
         jLabel1.setText("Register for Course");
+        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(408, 28, -1, -1));
 
         jLabel2.setFont(new java.awt.Font("Skia", 1, 14)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(2, 79, 133));
         jLabel2.setText("Course Number :");
+        add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 140, -1, -1));
 
         jLabel10.setFont(new java.awt.Font("Skia", 1, 14)); // NOI18N
         jLabel10.setForeground(new java.awt.Color(2, 79, 133));
         jLabel10.setText("Course Name:");
+        add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 140, -1, -1));
 
         cmbCourseNumber.setFont(new java.awt.Font("Skia", 0, 14)); // NOI18N
         cmbCourseNumber.addFocusListener(new java.awt.event.FocusAdapter() {
@@ -191,6 +194,7 @@ public class RegisterCourseJPanel extends javax.swing.JPanel {
                 cmbCourseNumberActionPerformed(evt);
             }
         });
+        add(cmbCourseNumber, new org.netbeans.lib.awtextra.AbsoluteConstraints(263, 128, 220, 37));
 
         btnAddCustomer.setBackground(new java.awt.Color(0, 153, 255));
         btnAddCustomer.setFont(new java.awt.Font("Skia", 1, 14)); // NOI18N
@@ -201,10 +205,12 @@ public class RegisterCourseJPanel extends javax.swing.JPanel {
                 btnAddCustomerActionPerformed(evt);
             }
         });
+        add(btnAddCustomer, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 230, -1, 40));
 
         jLabel12.setFont(new java.awt.Font("Skia", 1, 18)); // NOI18N
         jLabel12.setForeground(new java.awt.Color(2, 79, 133));
         jLabel12.setText("Course  Information");
+        add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(437, 84, -1, -1));
 
         tblCourse.setBackground(new java.awt.Color(2, 79, 133));
         tblCourse.setFont(new java.awt.Font("Skia", 0, 14)); // NOI18N
@@ -230,9 +236,12 @@ public class RegisterCourseJPanel extends javax.swing.JPanel {
         });
         jScrollPane1.setViewportView(tblCourse);
 
+        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 300, 813, 99));
+
         jLabel16.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel16.setForeground(new java.awt.Color(255, 255, 255));
         jLabel16.setText("All Customers");
+        add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(54, 380, -1, -1));
 
         backBtn.setBackground(new java.awt.Color(2, 79, 133));
         backBtn.setFont(new java.awt.Font("Skia", 1, 14)); // NOI18N
@@ -243,114 +252,27 @@ public class RegisterCourseJPanel extends javax.swing.JPanel {
                 backBtnActionPerformed(evt);
             }
         });
-
-        jLabel13.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel13.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/new customer.gif"))); // NOI18N
+        add(backBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(31, 17, -1, 40));
 
         jLabel14.setFont(new java.awt.Font("Skia", 1, 14)); // NOI18N
         jLabel14.setForeground(new java.awt.Color(2, 79, 133));
         jLabel14.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         jLabel14.setText("Requirement:");
+        add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 200, 122, -1));
 
         txtCourseName.setFont(new java.awt.Font("Skia", 0, 14)); // NOI18N
+        add(txtCourseName, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 130, 220, 32));
 
         txtMedicalPractice.setFont(new java.awt.Font("Skia", 0, 14)); // NOI18N
+        add(txtMedicalPractice, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 190, 220, 30));
 
         jLabel15.setFont(new java.awt.Font("Skia", 1, 14)); // NOI18N
         jLabel15.setForeground(new java.awt.Color(2, 79, 133));
         jLabel15.setText("Medical Practice:");
+        add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 200, -1, -1));
 
         txtRequirement.setFont(new java.awt.Font("Skia", 0, 14)); // NOI18N
-
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
-        this.setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(31, 31, 31)
-                        .addComponent(backBtn)
-                        .addGap(300, 300, 300)
-                        .addComponent(jLabel1))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(54, 54, 54)
-                        .addComponent(jLabel16)
-                        .addGap(291, 291, 291)
-                        .addComponent(btnAddCustomer))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(325, 325, 325)
-                                .addComponent(jLabel2))
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(334, 334, 334)
-                                .addComponent(jLabel10))
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(334, 334, 334)
-                                .addComponent(jLabel15))
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(334, 334, 334)
-                                .addComponent(jLabel14, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGap(87, 87, 87)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(txtCourseName)
-                            .addComponent(cmbCourseNumber, 0, 220, Short.MAX_VALUE)
-                            .addComponent(txtMedicalPractice)
-                            .addComponent(txtRequirement)))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(164, 164, 164)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 813, Short.MAX_VALUE)
-                            .addComponent(jLabel13, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(437, 437, 437)
-                        .addComponent(jLabel12)))
-                .addContainerGap(177, Short.MAX_VALUE))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(17, 17, 17)
-                        .addComponent(backBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(28, 28, 28)
-                        .addComponent(jLabel1)))
-                .addGap(27, 27, 27)
-                .addComponent(jLabel12)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(36, 36, 36)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                    .addComponent(jLabel2)
-                                    .addComponent(cmbCourseNumber, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGap(27, 27, 27)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                    .addComponent(txtCourseName, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jLabel10))
-                                .addGap(50, 50, 50))
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                .addComponent(jLabel15)
-                                .addComponent(txtMedicalPractice, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 9, Short.MAX_VALUE)
-                        .addComponent(jLabel14))
-                    .addGroup(layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(txtRequirement, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(64, 64, 64)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel16)
-                    .addComponent(btnAddCustomer, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 16, Short.MAX_VALUE)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel13, javax.swing.GroupLayout.PREFERRED_SIZE, 245, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(20, 20, 20))
-        );
+        add(txtRequirement, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 190, 220, 32));
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnAddCustomerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAddCustomerActionPerformed
@@ -496,7 +418,6 @@ public class RegisterCourseJPanel extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel12;
-    private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel16;

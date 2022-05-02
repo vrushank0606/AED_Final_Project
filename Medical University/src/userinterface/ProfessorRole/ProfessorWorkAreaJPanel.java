@@ -18,7 +18,7 @@ import javax.swing.JPanel;
 
 /**
  *
- * @author rakesh
+ * @author sumana
  */
 public class ProfessorWorkAreaJPanel extends javax.swing.JPanel {
 
@@ -86,7 +86,7 @@ public class ProfessorWorkAreaJPanel extends javax.swing.JPanel {
         jLabel8.setForeground(new java.awt.Color(2, 79, 133));
         jLabel8.setText("Insurance Agent Work Area ");
         add(jLabel8);
-        jLabel8.setBounds(200, 60, 320, 32);
+        jLabel8.setBounds(200, 60, 320, 25);
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnAddNewCourseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAddNewCourseActionPerformed

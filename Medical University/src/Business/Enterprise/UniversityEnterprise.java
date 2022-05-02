@@ -14,7 +14,7 @@ import java.util.List;
 
 /**
  *
- * @author Vrushank
+ * @author sumana
  */
 public class UniversityEnterprise extends Enterprise {
     
