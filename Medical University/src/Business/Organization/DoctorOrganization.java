@@ -11,7 +11,7 @@ import java.util.ArrayList;
 /**
  *
  * @author vrushankhiremath
- */
+ *//
 public class DoctorOrganization extends Organization{
 
     public DoctorOrganization() {
