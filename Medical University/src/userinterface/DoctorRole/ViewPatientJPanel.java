@@ -77,12 +77,14 @@ public class ViewPatientJPanel extends javax.swing.JPanel {
         });
 
         jLabel18.setFont(new java.awt.Font("Skia", 1, 14)); // NOI18N
+        jLabel18.setForeground(new java.awt.Color(2, 79, 133));
         jLabel18.setText("Phone Number:");
 
         txtFirstName.setEditable(false);
         txtFirstName.setFont(new java.awt.Font("Skia", 0, 14)); // NOI18N
 
         jLabel7.setFont(new java.awt.Font("Skia", 1, 14)); // NOI18N
+        jLabel7.setForeground(new java.awt.Color(2, 79, 133));
         jLabel7.setText("First Name :");
 
         jScrollPane1.setEnabled(false);
@@ -94,12 +96,15 @@ public class ViewPatientJPanel extends javax.swing.JPanel {
         jScrollPane1.setViewportView(txtAddress);
 
         jLabel8.setFont(new java.awt.Font("Skia", 1, 14)); // NOI18N
+        jLabel8.setForeground(new java.awt.Color(2, 79, 133));
         jLabel8.setText("Address :");
 
         jLabel1.setFont(new java.awt.Font("Skia", 1, 24)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(2, 79, 133));
         jLabel1.setText("Patient Details");
 
         jLabel10.setFont(new java.awt.Font("Skia", 1, 14)); // NOI18N
+        jLabel10.setForeground(new java.awt.Color(2, 79, 133));
         jLabel10.setText("Last Name :");
 
         txtLastName.setEditable(false);
@@ -114,12 +119,15 @@ public class ViewPatientJPanel extends javax.swing.JPanel {
         });
 
         jLabel24.setFont(new java.awt.Font("Skia", 1, 14)); // NOI18N
+        jLabel24.setForeground(new java.awt.Color(2, 79, 133));
         jLabel24.setText("Age :");
 
         jLabel2.setFont(new java.awt.Font("Skia", 1, 14)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(2, 79, 133));
         jLabel2.setText("Patient Medical Condition:");
 
         jLabel3.setFont(new java.awt.Font("Skia", 1, 14)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(2, 79, 133));
         jLabel3.setText("Prescription :");
 
         txtPrescription.setEditable(false);
@@ -132,6 +140,7 @@ public class ViewPatientJPanel extends javax.swing.JPanel {
         txtPatientId.setFont(new java.awt.Font("Skia", 0, 14)); // NOI18N
 
         jLabel4.setFont(new java.awt.Font("Skia", 1, 14)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(2, 79, 133));
         jLabel4.setText("Patient ID :");
 
         txtMedicalCondition.setEditable(false);

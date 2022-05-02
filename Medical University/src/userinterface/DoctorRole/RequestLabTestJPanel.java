@@ -16,7 +16,7 @@ import javax.swing.JPanel;
 
 /**
  *
- * @author kavya
+ * @author Kavya
  */
 public class RequestLabTestJPanel extends javax.swing.JPanel {
 
@@ -57,6 +57,7 @@ public class RequestLabTestJPanel extends javax.swing.JPanel {
         jLabel2 = new javax.swing.JLabel();
         txtLabType = new javax.swing.JTextField();
         jLabel3 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(255, 255, 255));
         setForeground(new java.awt.Color(2, 79, 133));
@@ -71,15 +72,14 @@ public class RequestLabTestJPanel extends javax.swing.JPanel {
                 requestTestJButtonActionPerformed(evt);
             }
         });
-        add(requestTestJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 380, 150, 30));
+        add(requestTestJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 290, 150, 30));
 
         jLabel1.setFont(new java.awt.Font("Skia", 1, 14)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(51, 51, 51));
         jLabel1.setText("Message:");
-        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 260, 70, -1));
+        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 240, 70, -1));
 
         txtLabMessage.setFont(new java.awt.Font("Skia", 0, 14)); // NOI18N
-        add(txtLabMessage, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 310, 130, 30));
+        add(txtLabMessage, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 230, 130, 30));
 
         backJButton.setBackground(new java.awt.Color(2, 79, 133));
         backJButton.setFont(new java.awt.Font("Skia", 1, 14)); // NOI18N
@@ -93,27 +93,26 @@ public class RequestLabTestJPanel extends javax.swing.JPanel {
         add(backJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 10, -1, 30));
 
         valueLabel.setFont(new java.awt.Font("Skia", 1, 14)); // NOI18N
-        valueLabel.setForeground(new java.awt.Color(51, 51, 51));
         valueLabel.setText("<value>");
         add(valueLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 130, 130, 20));
 
         enterpriseLabel.setFont(new java.awt.Font("Skia", 1, 14)); // NOI18N
-        enterpriseLabel.setForeground(new java.awt.Color(51, 51, 51));
         enterpriseLabel.setText("Enterprise :");
         add(enterpriseLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 130, 80, 20));
 
         jLabel2.setFont(new java.awt.Font("Skia", 1, 14)); // NOI18N
-        jLabel2.setForeground(new java.awt.Color(51, 51, 51));
         jLabel2.setText("Lab Type:");
-        add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 160, 70, -1));
+        add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 200, 70, -1));
 
         txtLabType.setFont(new java.awt.Font("Skia", 0, 14)); // NOI18N
-        add(txtLabType, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 200, 130, 30));
+        add(txtLabType, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 190, 130, 30));
 
         jLabel3.setFont(new java.awt.Font("Skia", 1, 24)); // NOI18N
-        jLabel3.setForeground(new java.awt.Color(51, 51, 51));
         jLabel3.setText("Lab Test Request ");
-        add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 70, -1, -1));
+        add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 80, -1, -1));
+
+        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/lab (1).jpg"))); // NOI18N
+        add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 30, 440, 440));
     }// </editor-fold>//GEN-END:initComponents
 
     private void requestTestJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_requestTestJButtonActionPerformed
@@ -171,6 +170,7 @@ public class RequestLabTestJPanel extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
     private javax.swing.JButton requestTestJButton;
     private javax.swing.JTextField txtLabMessage;
     private javax.swing.JTextField txtLabType;
