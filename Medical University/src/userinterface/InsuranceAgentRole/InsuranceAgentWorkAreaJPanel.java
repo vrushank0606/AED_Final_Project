@@ -15,7 +15,7 @@ import javax.swing.JPanel;
 
 /**
  *
- * @author rakesh
+ * @author vrushankhiremath
  */
 public class InsuranceAgentWorkAreaJPanel extends javax.swing.JPanel {
 

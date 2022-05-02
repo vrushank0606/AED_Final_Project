@@ -20,7 +20,7 @@ import javax.swing.table.TableRowSorter;
 
 /**
  *
- * @author rakesh
+ * @author vrushankhiremath
  */
 
 public class AllInsuranceRequestsJPanel extends javax.swing.JPanel {
